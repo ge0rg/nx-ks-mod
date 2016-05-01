@@ -7,7 +7,7 @@ ticking() {
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/asleep)" >""  ]]; then rm /sdcard/presets/asleep; 
 			hevc=($(st pmu show | grep hevc)); if [[ "${hevc[1]}" == "ON" ]]; then st key click rec; sleep 1; fi
- 			st app disp lcd
+ 			st app bb lcd on
 			die; fi
 	    sleep 0.5
 	done
@@ -19,7 +19,7 @@ killall -q mod_gui
 sleep 1 
 st key click rec
 sleep 2
-st app disp evf
+st app bb lcd off
 
 
 cat /dev/event0 > /sdcard/presets/asleep &
