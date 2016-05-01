@@ -1,0 +1,8 @@
+button|Save EV+UP|save_UPNX1.sh
+button|Load EV+UP|EV_UP.sh
+button|Save EV+DOWN|save_DOWNNX1.sh
+button|Load EV+DOWN|EV_DOWN.sh
+button|Save FullBackup|FullSaveNX1.sh
+button|Load FullBackup|FullLoadNX1.sh
+button|back|mod_gui /sdcard/scripts/gui_ini
+button|cancel|killall mod_gui

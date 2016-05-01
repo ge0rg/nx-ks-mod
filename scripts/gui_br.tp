@@ -1,0 +1,8 @@
+button|4K Pro: ${Pro4K}Mbps|br_set.sh 4K-ProQ
+button|4K HQ: ${Hq4K}Mbps|br_set.sh 4K-HQ
+button|HD Pro: ${ProHD}Mbps|br_set.sh HD-ProQ
+button|HD HQ: ${HqHD}Mbps|br_set.sh HD-HQ
+button|Current|br_current.sh
+button|VGA HQ: ${HqVGA}Mbps|br_set.sh VGA-HQ
+button|back|mod_gui /sdcard/scripts/gui_ini
+button|cancel|killall mod_gui

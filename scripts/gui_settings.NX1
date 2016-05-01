@@ -1,0 +1,4 @@
+checkbox|No Rec Limit|r-limit.sh
+button|Uninstall Mod|uninstall.sh
+button|back|mod_gui /sdcard/scripts/gui_ini
+button|cancel|killall mod_gui
