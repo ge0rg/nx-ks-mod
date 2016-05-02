@@ -34,7 +34,7 @@ systemctl set-environment Hq4K=$Hq4K
 systemctl set-environment HqHD=$HqHD
 systemctl set-environment HqVGA=$HqVGA
 
- [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /mnt/mmc/scripts/popup_timeout  " [ Mod v.1.42 ] " 2 &
+ [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /mnt/mmc/scripts/popup_timeout  " [ Mod v.1.43 ] " 2 &
 
 renice -n 20 -p $$
 
@@ -78,8 +78,7 @@ systemctl set-environment rbl=840
 #Indicate it's now running
 #systemctl set-environment mod=ed
 
-af_info=($(st cap iq af pos))
-st cap iq af mv 10 $(($(head -n 1 /mnt/mmc/presets/hib) - ${af_info[2]} )) 10
+
 sync
 sync
 sync
