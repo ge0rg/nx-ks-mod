@@ -1,8 +1,6 @@
 #!/bin/bash
 renice -n 0 -p $$ > /dev/null
-
 avail_br=(35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250 260 270 280 290 300 310 320)
-
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
 #NX500
 mq=$(prefman get 0 0x0000a368  b);  mq=( $mq )
@@ -23,7 +21,7 @@ case "$mz" in
     ;;
 2)   [[  "$mq" == "2" ]] && /mnt/mmc/scripts/pokemon pro2 $br 
 [[  "$mq" == "1" ]] &&   /mnt/mmc/scripts/pokemon hq2 $br 
-	;;
+  ;;
 3)   [[  "$mq" == "2" ]] && /mnt/mmc/scripts/pokemon pro3 $br 
 [[  "$mq" == "1" ]] &&   /mnt/mmc/scripts/pokemon hq3 $br 
    ;;
@@ -42,7 +40,6 @@ case "$mz" in
 *) ;;
 esac
 /mnt/mmc/scripts/popup_timeout  " [ Current Bitrate Updated  ] " 2
-
 elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40" ]; then
 #NX1
 mq=$(prefman get 0 0x00000338  b);  mq=( $mq ) 
@@ -63,7 +60,7 @@ case "$mz" in
     ;;
 2)   [[  "$mq" == "2" ]] && /mnt/mmc/scripts/pokemon pro1 $br 
 [[  "$mq" == "1" ]] &&   /mnt/mmc/scripts/pokemon hq1 $br 
-	;;
+  ;;
 3)   [[  "$mq" == "2" ]] && /mnt/mmc/scripts/pokemon pro1 $br 
 [[  "$mq" == "1" ]] &&   /mnt/mmc/scripts/pokemon hq1 $br 
    ;;
