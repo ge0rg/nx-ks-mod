@@ -2,7 +2,7 @@ checkbox|No Rec Limit|r-limit.sh
 checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
 checkbox| T BB AF |TBBAF.sh
-button| Mod v.1.48 mem |ver.sh 
+button| Mod v.1.49 mem |ver.sh 
 button|Uninstall Mod|uninstall.sh
 button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui

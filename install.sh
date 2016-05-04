@@ -25,6 +25,10 @@ EOF
     else
           /mnt/mmc/scripts/popup_timeout  " [  BT-mod present ] " 2
                 /mnt/mmc/scripts/popup_timeout  " [  Reinstalling...  ] " 4 &
+                killall -q keyscan
+                killall -q mod_gui
+                rm /tmp/keyscan.pid
+                rm -r /opt/home/scripts/
                 mount -o remount,rw /
                 rm /usr/sbin/bluetoothd
                 mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd
