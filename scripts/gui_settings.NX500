@@ -2,7 +2,9 @@ checkbox|Silent Shutter|rolling_shutter.sh
 checkbox|VGA to 2.5K|2K.sh
 checkbox|No Rec Limit|r-limit.sh
 checkbox|Refocus on Boot|refocus.sh
-button| Mod v.1.45 - BT |ver.sh 
+checkbox|Enable Bluetooth|bt.sh
+button|Everything is Awesome|hbro.sh
+button| Mod v.1.46 - BT |ver.sh 
 button|Uninstall Mod|uninstall.sh
 button|back|mod_gui /sdcard/scripts/gui_ini
 button|cancel|killall mod_gui

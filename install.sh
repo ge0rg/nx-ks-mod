@@ -1,12 +1,11 @@
 #!/bin/bash
-
+#
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] || { $( st app disp lcd ) &&  sleep 1 ; }
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] || exit		
-
+#
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ] ||
  [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ]; then
    	if [ ! -x /usr/sbin/bluetoothd.orig ]; then
-        /mnt/mmc/scripts/popup_ok "Installing BT-mod | Keep Bluetooth?" NO YES; [  $? -eq 0 ] || btd="/usr/sbin/bluetoothd.orig"
         /mnt/mmc/scripts/popup_timeout  " [  Installing...  ] " 2 &
         mount -o remount,rw /
         mv /usr/sbin/bluetoothd /usr/sbin/bluetoothd.orig
@@ -15,28 +14,23 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
 if [ -x /mnt/mmc/scripts/init.sh ]; then
   /mnt/mmc/scripts/init.sh 
 fi
-$btd
 EOF
           chmod +x /usr/sbin/bluetoothd
           mount -o remount,ro /
           sleep 5
-          /mnt/mmc/scripts/popup_timeout  " [  Installed. ] " 2
+          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 2
     else
-
-          /mnt/mmc/scripts/popup_timeout  " [  BT-mod already present...  ] " 2
-          /mnt/mmc/scripts/popup_ok "BT-mod Already Present" REINSTALL KEEP
-          if [  $? -eq 0 ] ; then
-                /mnt/mmc/scripts/popup_timeout  " [  Uninstalling...  ] " 4 &
+          /mnt/mmc/scripts/popup_timeout  " [  BT-mod present ] " 2
+                /mnt/mmc/scripts/popup_timeout  " [  Reinstalling...  ] " 4 &
                 mount -o remount,rw /
                 rm /usr/sbin/bluetoothd
                 mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd
                 chmod +x /usr/sbin/bluetoothd
                 mount -o remount,ro /
                 sleep 5  
-                /mnt/mmc/scripts/popup_timeout  " [  BT-mod Uninstalled  ] " 2 
+                /mnt/mmc/scripts/popup_timeout  " [  BT-mod Uninstalled...  ] " 2 
                 sync;sync;sync
                 reboot
-        fi
     fi
       [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && mv /mnt/mmc/scripts/EV_EV.sh /mnt/mmc/scripts/EV_OK.sh
       killall dfmsd

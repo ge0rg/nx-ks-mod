@@ -20,6 +20,7 @@ export DISPLAY=:0
 export GTK_IM_MODULE=scim
 export EINA_LOG_SYSLOG_ENABLE=0
 export ELM_PROFILE=mobile
+[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /mnt/mmc/scripts/popup_timeout  " [ Mod v.1.46 ] " 2 &
 #############################################
 # Choose Bitrates ( no added spaces! make sure it looks like Pro4K=90 )
 #       Available bitrates in Mbps: 35,40,45,50,55,60,65,70,75,80,85,90,95,
@@ -51,12 +52,9 @@ systemctl set-environment HqVGA=$HqVGA
 #Set Recording-Batch-Length in seconds
 systemctl set-environment rbl=840
 ##############################################
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /mnt/mmc/scripts/popup_timeout  " [ Mod v.1.45 ] " 2 &
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-$DIR/keyscan /dev/event0 /dev/event1 $DIR
+/mnt/mmc/scripts/keyscan /dev/event0 /dev/event1 /mnt/mmc/scripts/ &
 renice -n 20 -p $$
 sync
 sync
 sync
 exit
-
