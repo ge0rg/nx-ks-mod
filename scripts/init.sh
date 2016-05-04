@@ -26,8 +26,7 @@ export TERM="vt102"
 export USER="root"
 export LOGNAME="root"
 export MULTISENSE_SND_PLAYER="tizen_snd_player"
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-$DIR/keyscan /dev/event0 /dev/event1 $DIR &
+/opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ &
 renice -n 20 -p $$
 sync
 sync

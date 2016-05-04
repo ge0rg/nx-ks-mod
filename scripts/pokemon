@@ -1,6 +1,5 @@
 #!/bin/bash
 renice -n 0 -p $$ > /dev/null
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ########################################################################
 ############ DO NOT TOUCH ##############################################
 ############ bitrate modified ##########################################
@@ -111,13 +110,13 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
         fi
         off0=nx500_$1[0]; off1=nx500_$1[1]
         if [[  ${!off0}>"" &&  ${!off1}>"" && ${!br0}>"" && ${!br1}>"" ]]; then
-               $DIR/poker $(pgrep di-camera-app) ${!off0}:${!br0} ${!off1}:${!br1}
+               /opt/home/scripts/poker $(pgrep di-camera-app) ${!off0}:${!br0} ${!off1}:${!br1}
         fi
 elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40" ]; then
                 br0=bitrate_$2[0]; br1=bitrate_$2[1]
                 off0=nx1_$1[0]; off1=nx1_$1[1]
                 if [[  ${!off0}>"" &&  ${!off1}>"" && ${!br0}>"" && ${!br1}>"" ]]; then
-                        $DIR/poker $(pgrep di-camera-app) ${!off0}:${!br0} ${!off1}:${!br1}
+                        /opt/home/scripts/poker $(pgrep di-camera-app) ${!off0}:${!br0} ${!off1}:${!br1}
                 fi
 fi
 

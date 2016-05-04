@@ -12,7 +12,7 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
         cat >/usr/sbin/bluetoothd << EOF
 #!/bin/bash
 if [ -x /opt/home/scripts/init.sh ]; then
-  /opt/home/scripts/init.sh &
+  /opt/home/scripts/init.sh
 fi
 EOF
           chmod +x /usr/sbin/bluetoothd
@@ -35,7 +35,7 @@ EOF
                 sync;sync;sync
                 reboot
     fi
-      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && mv /mnt/mmc/scripts/EV_EV.sh /mnt/mmc/scripts/EV_OK.sh
+      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && mv /opt/home/scripts/EV_EV.sh /opt/home/scripts/EV_OK.sh
       killall dfmsd
       rm /mnt/mmc/info.tg
       rm /mnt/mmc/nx_cs.adj
