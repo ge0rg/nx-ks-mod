@@ -4,5 +4,5 @@ button|HD Pro: ${ProHD}Mbps|br_set.sh HD-ProQ
 button|HD HQ: ${HqHD}Mbps|br_set.sh HD-HQ
 button|Current|br_current.sh
 button|VGA HQ: ${HqVGA}Mbps|br_set.sh VGA-HQ
-button|back|mod_gui /sdcard/scripts/gui_ini
+button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui

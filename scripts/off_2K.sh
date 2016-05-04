@@ -1,2 +1,2 @@
 #!/bin/bash
-/mnt/mmc/scripts/resup VGA VGA
+/opt/home/scripts/resup VGA VGA

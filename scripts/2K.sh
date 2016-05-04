@@ -1,2 +1,2 @@
 #!/bin/bash
-/mnt/mmc/scripts/resup VGA 2K
+/opt/home/scripts/resup VGA 2K

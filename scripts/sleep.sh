@@ -12,7 +12,7 @@ ticking() {
 	    sleep 0.5
 	done
 }
-[ -d "/mnt/mmc/presets" ] || mkdir /mnt/mmc/presets
+[ -d "/sdcard/presets" ] || mkdir /sdcard/presets
 
 st app bb lcd off
 st pmu set lli off
@@ -21,7 +21,7 @@ st pmu set ipc_bnr off
 
 af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
-echo $pos_temp > /mnt/mmc/presets/hib
+echo $pos_temp > /sdcard/presets/hib
 cat /dev/event0 > /sdcard/presets/asleep &
 cat /dev/event1 >> /sdcard/presets/asleep &
 ticking 180

@@ -8,7 +8,7 @@ export GTK_IM_MODULE_FILE=/opt/etc/gtk-2.0/gtk.immodules
 export LD_LIBRARY_PATH=:/usr/lib:/usr/lib/driver
 export ECORE_IMF_MODULE=isf
 export ECORE_INPUT_TIMEOUT_FIX=0
-export PATH=/usr/share/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH="/usr/share/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/usr/devel/usr/sbin:/opt/usr/devel/usr/bin:/opt/usr/devel/sbin:/opt/usr/devel/bin"
 export EINA_LOG_DLOG_ENABLE=1
 export XMODIFIERS=@im=SCIM
 export EINA_LOG_LEVEL=1
@@ -20,39 +20,14 @@ export DISPLAY=:0
 export GTK_IM_MODULE=scim
 export EINA_LOG_SYSLOG_ENABLE=0
 export ELM_PROFILE=mobile
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /mnt/mmc/scripts/popup_timeout  " [ Mod v.1.46 ] " 2 &
-#############################################
-# Choose Bitrates ( no added spaces! make sure it looks like Pro4K=90 )
-#       Available bitrates in Mbps: 35,40,45,50,55,60,65,70,75,80,85,90,95,
-#       100,110,120,130,140,150,160,170,180,190,
-#       200,210,220,230,240,250,260,270,280,290,300,310,320
-#############################################
-Pro4K=180   #nx500-pro1         / nx1-pro1
-ProHD=160   #nx500-pro2&pro3    / nx1-pro2
-Hq4K=90    #nx500-hq1          / nx1-hq1&hq2
-HqHD=80     #nx500-hq2&hq3&hq4  / nx1-hq3
-HqVGA=160   #nx500-hq5&hq6
-#############################################
-/mnt/mmc/scripts/pokemon pro1 $Pro4K
-/mnt/mmc/scripts/pokemon pro2 $ProHD
-/mnt/mmc/scripts/pokemon pro3 $ProHD
-/mnt/mmc/scripts/pokemon hq1 $Hq4K
-/mnt/mmc/scripts/pokemon hq2 $HqHD
-/mnt/mmc/scripts/pokemon hq3 $HqHD
-/mnt/mmc/scripts/pokemon hq4 $HqHD
-/mnt/mmc/scripts/pokemon hq5 $HqVGA
-/mnt/mmc/scripts/pokemon hq6 $HqVGA
-#############################################
-systemctl set-environment Pro4K=$Pro4K
-systemctl set-environment ProHD=$ProHD
-systemctl set-environment Hq4K=$Hq4K
-systemctl set-environment HqHD=$HqHD
-systemctl set-environment HqVGA=$HqVGA
-##############################################
-#Set Recording-Batch-Length in seconds
-systemctl set-environment rbl=840
-##############################################
-/mnt/mmc/scripts/keyscan /dev/event0 /dev/event1 /mnt/mmc/scripts/ &
+export SHELL="/bin/sh"
+export SHLVL="2"
+export TERM="vt102"
+export USER="root"
+export LOGNAME="root"
+export MULTISENSE_SND_PLAYER="tizen_snd_player"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$DIR/keyscan /dev/event0 /dev/event1 $DIR &
 renice -n 20 -p $$
 sync
 sync

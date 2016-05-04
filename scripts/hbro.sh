@@ -1,2 +1,2 @@
 #!/bin/bash
-/mnt/mmc/scripts/popup_timeout  " [ Coming Soon... ] " 3
+/opt/home/scripts/popup_timeout  " [ Coming Soon... ] " 3

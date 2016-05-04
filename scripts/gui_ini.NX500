@@ -1,6 +1,6 @@
-button|Video Bitrates|mod_gui /sdcard/scripts/gui_br
-button|Custom Func.|mod_gui /sdcard/scripts/gui_func
-button|Profiles|mod_gui /sdcard/scripts/gui_profiles
-button|Settings|mod_gui /sdcard/scripts/gui_settings
+button|Video Bitrates|mod_gui /opt/home/scripts/gui_br
+button|Custom Func.|mod_gui /opt/home/scripts/gui_func
+button|Profiles|mod_gui /opt/home/scripts/gui_profiles
+button|Settings|mod_gui /opt/home/scripts/gui_settings
 button|Hibernate|hibernate.sh
 button|Sleep|sleep.sh

@@ -158,7 +158,7 @@ esac
 off1="nx1_$cq[1]"
 fi
 
-ad=$(/mnt/mmc/scripts/poker $(pgrep di-camera-app) ${!off1})
+ad=$(/opt/home/scripts/poker $(pgrep di-camera-app) ${!off1})
 ad=_${ad:11:20}
 echo ${!ad}
 exit

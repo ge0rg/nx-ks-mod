@@ -5,34 +5,34 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
     if [[ "$1" = "VGA" ]]; then
 
         case "$2" in
-        DC)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af094:878ea0e3 0x1af098:01aaa0e3 #DC#
+        DC)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:878ea0e3 0x1af098:01aaa0e3 #DC#
             ;;
-        UHD)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af094:878ea0e3 0x1af098:0faca0e3 #UHD#
+        UHD)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:878ea0e3 0x1af098:0faca0e3 #UHD#
             ;;
-        2K)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af094:5a8ea0e3 0x1af098:0aaca0e3 #2.K#
+        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:5a8ea0e3 0x1af098:0aaca0e3 #2.K#
             ;;
-        1080P)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af094:388400e3 0x1af098:1eada0e3 #1080P#
+        1080P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:388400e3 0x1af098:1eada0e3 #1080P#
            ;;
-        720P)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af094:2d8ea0e3 0x1af098:05aca0e3 #720P
+        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:2d8ea0e3 0x1af098:05aca0e3 #720P
            ;;
-        VGA)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af094:1e8ea0e3 0x1af098:0aada0e3 #VGA#
+        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:1e8ea0e3 0x1af098:0aada0e3 #VGA#
            ;;
         *) ;;
         esac
 
     elif [[ "$1" = "720P" ]]; then
         case "$2" in
-        DC)   /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af088:878ea0e3 0x1af08c:01aaa0e3 #DC#
+        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:878ea0e3 0x1af08c:01aaa0e3 #DC#
             ;;
-        UHD)    /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af088:878ea0e3 0x1af08c:0faca0e3 #UHD#
+        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:878ea0e3 0x1af08c:0faca0e3 #UHD#
             ;;
-        2K)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af088:5a8ea0e3 0x1af08c:0aaca0e3 #2.K#
+        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:5a8ea0e3 0x1af08c:0aaca0e3 #2.K#
             ;;
-        1080P)   /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af088:388400e3 0x1af08c:1eada0e3 #1080P#
+        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:388400e3 0x1af08c:1eada0e3 #1080P#
            ;;
-        720P)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af088:2d8ea0e3 0x1af08c:05aca0e3 #720P
+        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:2d8ea0e3 0x1af08c:05aca0e3 #720P
            ;;
-        VGA)  /mnt/mmc/scripts/poker $(pgrep di-camera-app) 0x1af088:1e8ea0e3 0x1af08c:0aada0e3 #VGA#
+        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:1e8ea0e3 0x1af08c:0aada0e3 #VGA#
            ;;
         *) ;;
         esac

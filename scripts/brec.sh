@@ -19,7 +19,7 @@ for i in "${tii[@]}"; do if [[ $i == "rbl="* ]]; then recording_length=${i:4}; f
 for i in "${tii[@]}"; do if [[ $i == "rec="* ]]; then rec=$((1-${i:4})); fi; done
 if [[ -z "$rec" ]]; then rec=1; fi
 
-/mnt/mmc/scripts/popup_ok "CONT. REC - $recording_length sec batch ?" START CANCEL 
+/opt/home/scripts/popup_ok "CONT. REC - $recording_length sec batch ?" START CANCEL 
 if [[  $? -eq 255 ]]; then  
 	systemctl set-environment rec=0;  
 	die 

@@ -12,7 +12,7 @@ ticking() {
 	    sleep 0.5
 	done
 }
-[ -d "/mnt/mmc/presets" ] || mkdir /mnt/mmc/presets
+[ -d "/sdcard/presets" ] || mkdir /sdcard/presets
 
 renice -n 0 -p $$
 killall -q mod_gui
