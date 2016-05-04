@@ -4,6 +4,8 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
  [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ]; then
   if [ -x /usr/sbin/bluetoothd.orig ]; then
     rm -r /opt/home/scripts/
+    swapoff /opt/usr/home/swapmod
+    rm /opt/usr/home/swapmod
     mount -o remount,rw /
     cd /usr/sbin/
     mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd

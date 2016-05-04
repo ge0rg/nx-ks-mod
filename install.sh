@@ -29,6 +29,7 @@ EOF
                 killall -q mod_gui
                 rm /tmp/keyscan.pid
                 rm -r /opt/home/scripts/
+                rm /opt/usr/home/swapmod
                 mount -o remount,rw /
                 rm /usr/sbin/bluetoothd
                 mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd

@@ -26,8 +26,8 @@ export TERM="vt102"
 export USER="root"
 export LOGNAME="root"
 export MULTISENSE_SND_PLAYER="tizen_snd_player"
-/opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ &
 renice -n 20 -p $$
+/opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
 sync
 sync
 sync

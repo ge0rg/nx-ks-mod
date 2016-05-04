@@ -2,7 +2,7 @@ button|Focus Stacking|focus_stack
 button|Focus Buttons|focus_buttons
 button|Batch Recording|brec.sh
 button|LCD-Off Rec.|nrec.sh
-button|High Bitrate Opt.|hbro.sh
+button| | 
 button|Kill Switch|killkillkill.sh
 button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui
