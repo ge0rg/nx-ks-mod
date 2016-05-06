@@ -13,18 +13,13 @@ ticking() {
 	done
 }
 [ -d "/sdcard/presets" ] || mkdir /sdcard/presets
-
 renice -n 0 -p $$
 killall -q mod_gui
 sleep 1 
 st key click rec
 sleep 2
 st app bb lcd off
-
-
 cat /dev/event0 > /sdcard/presets/asleep &
 cat /dev/event1 >> /sdcard/presets/asleep &
-
 ticking 99999
-
 exit

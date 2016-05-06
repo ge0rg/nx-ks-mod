@@ -4,3 +4,4 @@ renice -n -15 -p $$
 killall -q mod_gui
 /opt/home/scripts/mod_gui /opt/home/scripts/gui_ini &
 /opt/home/scripts/br_menu.sh
+exit

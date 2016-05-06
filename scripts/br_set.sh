@@ -21,4 +21,6 @@ VGA-HQ) /opt/home/scripts/pokemon hq5 $br; /opt/home/scripts/pokemon hq6 $br; sy
 esac
 sync;sync;sync
 /opt/home/scripts/br_up.sh
-
+/opt/home/scripts/popup_timeout  " [ Bitrates Updated  ] " 2
+killall -q mod_gui
+exit

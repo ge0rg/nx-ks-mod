@@ -22,3 +22,4 @@ elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /e
 	reboot ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
 	exit
 fi
+exit

@@ -1,8 +1,8 @@
 checkbox|No Rec Limit|r-limit.sh
 checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
-checkbox|Swap 64MB|hbro.sh
-button| Mod v1.51 mem |ver.sh 
+checkbox|Swap 256MB|hbro.sh
+button| Mod v1.52 mem |ver.sh 
 button|Uninstall Mod|uninstall.sh
 button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui
