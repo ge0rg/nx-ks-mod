@@ -37,7 +37,7 @@ EOF
                 chmod +x /usr/sbin/bluetoothd
                 mount -o remount,ro /
                 sleep 5  
-                /mnt/mmc/scripts/popup_timeout  " [  BT-mod Uninstalled...  ] " 2 
+                /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 2 
                 sync;sync;sync
                 reboot
     fi
@@ -46,6 +46,7 @@ EOF
       rm /mnt/mmc/info.tg
       rm /mnt/mmc/nx_cs.adj
       rm /mnt/mmc/install.sh
+      rm /mnt/mmc/NX-KS_readme.odt
       rm -r /mnt/mmc/scripts/
     sync;sync;sync
     reboot

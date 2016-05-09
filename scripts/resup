@@ -1,9 +1,7 @@
 #!/bin/bash
 renice -n 0 -p $$
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
-    
     if [[ "$1" = "VGA" ]]; then
-
         case "$2" in
         DC)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af094:878ea0e3 0x1af098:01aaa0e3 #DC#
             ;;
@@ -19,7 +17,6 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
            ;;
         *) ;;
         esac
-
     elif [[ "$1" = "720P" ]]; then
         case "$2" in
         DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af088:878ea0e3 0x1af08c:01aaa0e3 #DC#
@@ -36,7 +33,6 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
            ;;
         *) ;;
         esac
-
     fi
 fi
 exit

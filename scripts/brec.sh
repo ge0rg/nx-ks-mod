@@ -1,6 +1,5 @@
 #!/bin/bash
 renice -n 0 -p $$
-
 yell() { echo "$0: $*" >&2; }
 die() { yell "$*"; exit 111; }
 ticking() {
@@ -10,7 +9,6 @@ ticking() {
 	    sleep 0.5
 	done
 }
-
 tii=($(systemctl show-environment))
 #
 recording_length=890
@@ -24,10 +22,7 @@ if [[  $? -eq 255 ]]; then
 	systemctl set-environment rec=0;  
 	die 
 fi
-
 systemctl set-environment rec=$rec
-
-
 until [ $rec -lt 1 ]
 do
       st key click rec;ticking $recording_length;st key click rec

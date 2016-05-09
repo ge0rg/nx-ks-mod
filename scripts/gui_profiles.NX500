@@ -1,7 +1,7 @@
 button|Save EV+UP|save_UP.sh
 button|Load EV+UP|EV_UP.sh
-button|Save EV+DOWN|save_DOWN.sh
-button|Load EV+DOWN|EV_DOWN.sh
+button|Save EV+DN|save_DOWN.sh
+button|Load EV+DN|EV_DOWN.sh
 button|Save FullBackup|FullSave.sh
 button|Load FullBackup|FullLoad.sh
 button|back|mod_gui /opt/home/scripts/gui_ini

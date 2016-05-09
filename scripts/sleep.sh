@@ -13,12 +13,10 @@ ticking() {
 	done
 }
 [ -d "/sdcard/presets" ] || mkdir /sdcard/presets
-
 st app bb lcd off
 st pmu set lli off
 st pmu set ipc_lcac off
 st pmu set ipc_bnr off
-
 af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
 echo $pos_temp > /sdcard/presets/hib
@@ -34,4 +32,3 @@ sync
 sync
 sleep 0.5
 systemctl hybrid-sleep
-

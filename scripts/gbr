@@ -99,7 +99,6 @@ _c1f2e110=300
 _c1f27a20=310
 _c1f21230=320
 ########################################################################
-
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
 #NX500
 mq=$(prefman get 0 0x0000a368  b);  mq=( $mq )
@@ -127,7 +126,7 @@ case "$mz" in
 *) ;;
 esac
 off1="nx500_$cq[1]"
-
+#
 elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40" ]; then
 #NX1
 mq=$(prefman get 0 0x00000338  b);  mq=( $mq )
@@ -157,7 +156,7 @@ case "$mz" in
 esac
 off1="nx1_$cq[1]"
 fi
-
+#
 ad=$(/opt/home/scripts/poker $(pgrep di-camera-app) ${!off1})
 ad=_${ad:11:20}
 echo ${!ad}
