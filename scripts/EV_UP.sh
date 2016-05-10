@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n 0 -p $$ 
+renice -n -50 -p $$ 
 #
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
 #

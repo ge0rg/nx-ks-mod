@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n 0 -p $$
+renice -n -50 -p $$
  /opt/home/scripts/popup_timeout  " [  Saving...  ] " 3
 [ -d "/sdcard/presets" ] || mkdir /sdcard/presets
 prefman save_file 0 /sdcard/presets/FullSave0

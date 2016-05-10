@@ -24,7 +24,7 @@ EOF
           /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 2
     else
           /mnt/mmc/scripts/popup_timeout  " [  BT-mod present ] " 2
-                /mnt/mmc/scripts/popup_timeout  " [  Reinstalling...  ] " 4 &
+                /mnt/mmc/scripts/popup_timeout  " [  Lets cleanup...  ] " 4 &
                 killall -q keyscan
                 killall -q mod_gui
                 rm /tmp/keyscan.pid

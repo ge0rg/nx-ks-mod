@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n 0 -p $$
+renice -n -50 -p $$
 af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
 tii=($(systemctl show-environment))

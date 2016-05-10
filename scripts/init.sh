@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n -20 -p $$
+renice -n -50 -p $$
 export HIB=a
 export EVAS_FONT_DPI=72
 export EINA_LOG_LEVELS=ecore_x:4,evas_main:1
@@ -26,8 +26,7 @@ export TERM="vt102"
 export USER="root"
 export LOGNAME="root"
 export MULTISENSE_SND_PLAYER="tizen_snd_player"
-renice -n 20 -p $$
-/opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
+nice -n -50 /opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
 sync
 sync
 sync

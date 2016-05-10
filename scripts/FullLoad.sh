@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n 0 -p $$ 
+renice -n -50 -p $$ 
 [[ -f /sdcard/presets/FullSave0 && 
 -f /sdcard/presets/FullSave1 &&
 -f /sdcard/presets/FullSave2 &&
