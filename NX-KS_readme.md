@@ -55,23 +55,24 @@ and it will be lost on reboot.
 Accepted bitrate values are in essence from 40Mbps to 320Mbps in 10Mbps
 increments.
 
-> *Complete list: *
+> Complete list:
 
-> *35,40,45,50,55,60,65,70,75,80,85,90,95,*
+> 35,40,45,50,55,60,65,70,75,80,85,90,95,
 
-> *100,110,120,130,140,150,160,170,180,190,*
+> 100,110,120,130,140,150,160,170,180,190,
 
-> *200,210,220,230,240,250,260,270,280,290,*
+> 200,210,220,230,240,250,260,270,280,290,
 
-> *300,310,320*
+> 300,310,320
 
-** Custom Functions**
+Custom Functions
 
 Focus Stacking Focus Buttons
 
-Batch Recording LCD-off Recording\
-Mod v1.\*\* (about) Kill Switch (turns off Mod software, custom bitrates
-remain)
+Batch Recording LCD-off Recording (record with LCD turned OFF)
+
+Wake me UP TBBAF (True something-something autofocus, experimental)\
+Mod v1.\*\* (about) Reboot (when in doubt - reboot)
 
 Profiles
 
@@ -134,7 +135,7 @@ of the two subjects.
 
 Adjusting focus is possible is possible at any time.
 
-**Refocus on Boot**
+Refocus on Boot
 
 When using hibernation (EV+AEL or Menu\>Hibernate) the camera records
 last focus distance
@@ -150,16 +151,9 @@ recording too long. When button is pressed, the camera starts recording
 and auto-starts new clips until \"Rec\" is pressed. Clips are split in
 840sec batches, and will have about a second gap in the continuity.
 
-Kill Switch
+Wake me UP
 
-Stops and removes the program \"keyscan\" from memory ( which monitors
-your key-press combinations EV+\*, so there will be no key-combinations
-and no menu to access )
-
-You have an option to let it auto-restart in 3 minutes.
-
-Bitrate modifications remain. If not restarted in 3 minutes, you will
-need camera-restart to enable menus.
+Puts camera to sleep, and wakes it up in set by you number of minutes.
 
 **Thanks to Otto** for the programs that make this possible - keyscan,
 gui, poker, focus stacking, focus buttons, \... to name a few.\
@@ -171,7 +165,7 @@ his calculations)
 front the computers. You can get in touch with me on
 [www.fb.com/KinoSeed/](http://www.fb.com/KinoSeed/)
 
-**Donations**
+Donations
 
 \
 Otto:

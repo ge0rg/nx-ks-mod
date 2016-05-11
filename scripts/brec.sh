@@ -11,21 +11,21 @@ ticking() {
 }
 tii=($(systemctl show-environment))
 #
-recording_length=890
-for i in "${tii[@]}"; do if [[ $i == "rbl="* ]]; then recording_length=${i:4}; fi; done
+recording_length=$(/opt/home/scripts/popup_entry "Set Video Length In Minutes:" "Set" "Default 14")
+[[ $recording_length =~ ^[0-9]+$ ]] || recording_length=14
 #
 for i in "${tii[@]}"; do if [[ $i == "rec="* ]]; then rec=$((1-${i:4})); fi; done
 if [[ -z "$rec" ]]; then rec=1; fi
-
-/opt/home/scripts/popup_ok "CONT. REC - $recording_length sec batch ?" START CANCEL 
+/opt/home/scripts/popup_ok "CONT. REC - $recording_length Minutes Batch ?" START CANCEL 
 if [[  $? -eq 255 ]]; then  
 	systemctl set-environment rec=0;  
 	die 
 fi
 systemctl set-environment rec=$rec
+recording_length=$(($recording_length*60-1))
 until [ $rec -lt 1 ]
 do
-      st key click rec;ticking $recording_length;st key click rec
+      st key click rec;sleep 2;ticking $recording_length;st key click rec
       tii=($(systemctl show-environment))
       for i in "${tii[@]}"; do if [[ $i == "rec="* ]]; then rec=${i:4}; fi; done
 done
