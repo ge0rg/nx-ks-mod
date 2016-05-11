@@ -4,10 +4,10 @@ button|Focus Buttons|focus_buttons
 button|Batch Recording|brec.sh
 button|LCD-Off Rec.|nrec.sh
 
-button|Peaking|peak.sh
+button| |
 button|TBBAF|TBBAF.sh
 
-button| Mod v1.56m |ver.sh
+button| Mod v1.57m |ver.sh
 button|Reboot|reboot.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini

@@ -28,6 +28,7 @@ EOF
           killall -q keyscan
           killall -q mod_gui
           rm /tmp/keyscan.pid
+          rm -f /tmp/peaking_on          
           rm -r /opt/home/scripts/
           swapoff /opt/usr/home/swapmod
           rm /opt/usr/home/swapmod
