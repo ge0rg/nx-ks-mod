@@ -23,23 +23,23 @@ EOF
           sync;sync;sync
           /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 2
     else
-          /mnt/mmc/scripts/popup_timeout  " [  BT-mod present ] " 2
-                /mnt/mmc/scripts/popup_timeout  " [  Lets cleanup...  ] " 4 &
-                killall -q keyscan
-                killall -q mod_gui
-                rm /tmp/keyscan.pid
-                rm -r /opt/home/scripts/
-                swapoff /opt/usr/home/swapmod
-                rm /opt/usr/home/swapmod
-                mount -o remount,rw /
-                rm /usr/sbin/bluetoothd
-                mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd
-                chmod +x /usr/sbin/bluetoothd
-                mount -o remount,ro /
-                sleep 5  
-                /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 2 
-                sync;sync;sync
-                reboot
+          /mnt/mmc/scripts/popup_timeout  " [  BT-mod Detected ] " 2
+          /mnt/mmc/scripts/popup_timeout  " [  Lets cleanup...  ] " 4 &
+          killall -q keyscan
+          killall -q mod_gui
+          rm /tmp/keyscan.pid
+          rm -r /opt/home/scripts/
+          swapoff /opt/usr/home/swapmod
+          rm /opt/usr/home/swapmod
+          mount -o remount,rw /
+          rm /usr/sbin/bluetoothd
+          mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd
+          chmod +x /usr/sbin/bluetoothd
+          mount -o remount,ro /
+          sleep 5  
+          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 2 
+          sync;sync;sync
+          reboot
     fi
       [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && mv /opt/home/scripts/EV_EV.sh /opt/home/scripts/EV_OK.sh
       killall dfmsd
