@@ -71,7 +71,7 @@ Focus Stacking Focus Buttons
 
 Batch Recording LCD-off Recording (record with LCD turned OFF)
 
-Wake me UP TBBAF (True something-something autofocus, experimental)\
+Wake Lapse TBBAF (True something-something Auto-Focus)\
 Mod v1.\*\* (about) Reboot (when in doubt - reboot)
 
 Profiles
@@ -85,7 +85,9 @@ backup them as needed.
 
 Settings
 
-Silent Shutter (nx500 only) VGA to 2.5K (nx500 only)
+Silent Shutter (nx500 only)
+
+VGA to 2.5K (nx500 only)
 
 No Rec Limit (on nx500 4K/UHD limits remain, NX1 has problems with too
 long files)
@@ -151,9 +153,11 @@ recording too long. When button is pressed, the camera starts recording
 and auto-starts new clips until \"Rec\" is pressed. Clips are split in
 840sec batches, and will have about a second gap in the continuity.
 
-Wake me UP
+Wake Lapse
 
-Puts camera to sleep, and wakes it up in set by you number of minutes.
+Setup a Time-lapse with delayed start. Puts camera to sleep for used
+defined time period, upon wake-up it starts taking images with user
+specified time-gap between them, for user-specified duration.
 
 **Thanks to Otto** for the programs that make this possible - keyscan,
 gui, poker, focus stacking, focus buttons, \... to name a few.\
