@@ -9,7 +9,6 @@ lapsing() {
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
 		st key push s1 && st key click s2 && st key release s1
-		st app bb lcd osd
 	    sleep $2
 	done
 	lapsedone
@@ -24,7 +23,6 @@ tl_d=${tl_d}
 tl_g=${tl_g} 
 af_info=($(st cap iq af pos))
 st cap iq af mv 10 $(($(head -n 1 /sdcard/presets/hib) - ${af_info[2]} )) 10
-st app bb lcd osd
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Scheduled Time-lapse... " 5
 /usr/bin/st app nx capture af-mode manual
 /usr/bin/st cap capdtm setusr AFMODE 0x70003
