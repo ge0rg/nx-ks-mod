@@ -38,7 +38,7 @@ Main Menu
 
 Video Birtates Custom Functions
 
-Profiles Settings
+Focus Apps Settings
 
 Hibernate Sleep
 
@@ -67,37 +67,48 @@ increments.
 
 Custom Functions
 
-Focus Stacking Focus Buttons
-
 Batch Recording LCD-off Recording (record with LCD turned OFF)
 
 Wake Lapse TBBAF (True something-something Auto-Focus)\
 Mod v1.\*\* (about) Reboot (when in doubt - reboot)
 
-Profiles
+** **
+
+** Focus Apps **
+
+Focus Stacking
+
+Focus Buttons
+
+Pull Speed (set focus-pull speed used on EV+AEL)
+
+Settings
+
+> Silent Shutter (nx500 only)
+
+> VGA to 2.5K (nx500 only)
+
+> No Rec Limit (on nx500 4K/UHD limits remain, NX1 has problems with too
+> long files)
+
+> Refocus on Boot (return to last focus after hibernation)
+
+> **Profiles \>**
+
+> Enable Bluetooth (use this to enable Bluetooth functionality while the
+> mod is installed)
+
+> Uninstall Mod
+
+** Profiles**
 
 save/load UP or DN profile
 
 save/load FullBackup (all camera settings)
 
-Saved profiles are stored in /sdcard/presets/ and you can copy and
-backup them as needed.
+Saved profiles are stored in /sdcard/presets/
 
-Settings
-
-Silent Shutter (nx500 only)
-
-VGA to 2.5K (nx500 only)
-
-No Rec Limit (on nx500 4K/UHD limits remain, NX1 has problems with too
-long files)
-
-Refocus on Boot (return to last focus after hibernation)
-
-Enable Bluetooth (use this to enable Bluetooth functionality while the
-mod is installed)
-
-Uninstall Mod
+and you can copy and backup them as needed.
 
 Added Functionality
 
@@ -156,8 +167,9 @@ and auto-starts new clips until \"Rec\" is pressed. Clips are split in
 Wake Lapse
 
 Setup a Time-lapse with delayed start. Puts camera to sleep for used
-defined time period, upon wake-up it starts taking images with user
-specified time-gap between them, for user-specified duration.
+defined time period, upon wake-up it starts by refocusing to the focus
+position when Wake Lapse was started, and then starts taking images with
+user specified time-gap between them, for user-specified duration.
 
 **Thanks to Otto** for the programs that make this possible - keyscan,
 gui, poker, focus stacking, focus buttons, \... to name a few.\

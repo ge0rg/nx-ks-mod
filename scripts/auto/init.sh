@@ -1,6 +1,6 @@
 #!/bin/bash
 renice -n -50 -p $$
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v1.59m ] " 2 &
+[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v1.60m ] " 2 &
 #############################################
 # Choose Bitrates ( no added spaces! make sure it looks like Pro4K=90 )
 #       Available bitrates in Mbps: 35,40,45,50,55,60,65,70,75,80,85,90,95,
@@ -29,6 +29,7 @@ systemctl set-environment Hq4K=$Hq4K
 systemctl set-environment HqHD=$HqHD
 systemctl set-environment HqVGA=$HqVGA
 ##############################################
+systemctl set-environment fps=4
 sysctl fs.file-max=30000
 sync
 sync

@@ -14,4 +14,11 @@ sed -e "s/\${tl_d}/"$tl_d"/" -e "s/\${tl_g}/"$tl_g"/"   /opt/home/scripts/timela
 chmod +x /opt/home/scripts/auto/tl.sh
 #
 sleepytime=$(($sleepytime*60))
+#
+af_info=($(st cap iq af pos))
+pos_temp=${af_info[2]} 
+echo $pos_temp > /sdcard/presets/hib
+sync; sync; sync;
+sleep 0.25
+#
 rtcwake -m mem -s $sleepytime && reboot

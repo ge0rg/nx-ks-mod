@@ -1,13 +1,10 @@
-button|Focus Stacking|fstack.sh
-button|Focus Buttons|focus_buttons
-
 button|Batch Recording|brec.sh
 button|LCD-Off Rec.|nrec.sh
 
 button|Wake Lapse|wakelapse.sh
 button|TBBAF|TBBAF.sh
 
-button| Mod v1.59m |ver.sh 
+button| Mod v1.60m |ver.sh 
 button|Reboot|reboot.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini
