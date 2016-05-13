@@ -7,7 +7,7 @@ mq=$(prefman get 0 0x0000a368  b);  mq=( $mq )
 mq=${mq[5]}
 cb=$( /opt/home/scripts/gbr )
 [[  "$cb" == "" ]] && /opt/home/scripts/popup_timeout  " [  Profile Not Adjustable  ] " 2 && exit
-br=$(/opt/home/scripts/popup_entry "Current Bitrate: $cb Mbps" "Apply Change" Cancel)
+br=$(/opt/home/scripts/popup_entry "Current Bitrate ( Mbps ) :" "Apply Change" Cancel $cb number )
 [[ "$br" == "" ]]  && exit
 [[ "${avail_br[@]}" =~ "${br}" ]] ||  { $(/opt/home/scripts/popup_timeout  " [  Value Not Available  ] " 3) &&  exit ; }
 mz=$(prefman get 0 0x0000a360  b);  mz=( $mz )
@@ -46,7 +46,7 @@ mq=$(prefman get 0 0x00000338  b);  mq=( $mq )
 mq=${mq[5]}
 cb=$( /opt/home/scripts/gbr )
 [[  "$cb" == "" ]] && /opt/home/scripts/popup_timeout  " [  Profile Not Adjustable  ] " 2 && exit
-br=$(/opt/home/scripts/popup_entry "Current Bitrate: $cb Mbps" "Apply Change" Cancel)
+br=$(/opt/home/scripts/popup_entry "Current Bitrate ( Mbps ) :" "Apply Change" Cancel $cb number )
 [[ "$br" == "" ]]  && exit
 [[ "${avail_br[@]}" =~ "${br}" ]] ||  { $(/opt/home/scripts/popup_timeout  " [  Value Not Available  ] " 3) &&  exit ; }
 mz=$(prefman get 0 0x00000330  b);  mz=( $mz )

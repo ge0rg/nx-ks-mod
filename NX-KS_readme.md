@@ -82,13 +82,6 @@ Focus Buttons
 
 Pull Speed (set focus-pull speed used on EV+HalfShutter)
 
-Bug-Zapper (shifts focus several time in attempt to create video-stacks
-for macro,
-
-\...can be started also with EV+RIGHT, experimental
-
-... in case video-recording has problems starting, reboot)
-
 Settings
 
 > Silent Shutter (nx500 only)
@@ -199,7 +192,7 @@ his calculations)
 You can get in touch with me on
 [www.fb.com/KinoSeed/](http://www.fb.com/KinoSeed/)
 
-**Donations**
+Donations
 
 Otto:
 

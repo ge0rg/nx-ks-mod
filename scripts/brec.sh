@@ -11,7 +11,7 @@ ticking() {
 }
 tii=($(systemctl show-environment))
 #
-recording_length=$(/opt/home/scripts/popup_entry "Set Video Length In Minutes:" "Set" "Default 14")
+recording_length=$(/opt/home/scripts/popup_entry  "Video length :" "Set Minutes" Cancel 14 number)
 [[ $recording_length =~ ^[0-9]+$ ]] || recording_length=14
 #
 for i in "${tii[@]}"; do if [[ $i == "rec="* ]]; then rec=$((1-${i:4})); fi; done
