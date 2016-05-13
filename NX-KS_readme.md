@@ -26,6 +26,8 @@ UP: load UP profile
 
 DOWN: load DN profile
 
+RIGHT: Bug-Zapper
+
 Half-Press-Shutter: focus pull
 
 mobile: telnet
@@ -70,9 +72,7 @@ Custom Functions
 Batch Recording LCD-off Recording (record with LCD turned OFF)
 
 Wake Lapse TBBAF (True something-something Auto-Focus)\
-Mod v1.\*\* (about) Reboot (when in doubt - reboot)
-
-** **
+BitRate Booster Reboot (when in doubt - reboot)
 
 ** Focus Apps **
 
@@ -81,6 +81,13 @@ Focus Stacking
 Focus Buttons
 
 Pull Speed (set focus-pull speed used on EV+AEL)
+
+Bug-Zapper (shifts focus several time in attempt to create video-stacks
+for macro,
+
+\...can be started also with EV+RIGHT, experimental
+
+... in case video-recording has problems starting, reboot)
 
 Settings
 
@@ -171,6 +178,11 @@ defined time period, upon wake-up it starts by refocusing to the focus
 position when Wake Lapse was started, and then starts taking images with
 user specified time-gap between them, for user-specified duration.
 
+BitRate Booster
+
+Start recording by adjusting priorities 0.5 sec after recording starts,
+in attempt to give higher stability and increase max bitrate.
+
 **Thanks to Otto** for the programs that make this possible - keyscan,
 gui, poker, focus stacking, focus buttons, \... to name a few.\
 **Thanks to Vasile** for coming up with the values for the
@@ -183,7 +195,6 @@ front the computers. You can get in touch with me on
 
 Donations
 
-\
 Otto:
 
 Q: So, where\'s the **Donate** button? A: Nowhere. Find a suitable
