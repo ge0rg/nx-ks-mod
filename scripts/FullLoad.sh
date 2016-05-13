@@ -24,5 +24,5 @@ renice -n -50 -p $$
 	prefman load_file 10 /sdcard/presets/FullSave10; 
 	prefman save; 
 	sync;sync;sync;
-	/opt/home/scripts/popup_timeout  " [  Complete  ] " 2;reboot ) || /opt/home/scripts/popup_timeout  " [  Files Missing  ] " 3
+	/opt/home/scripts/popup_timeout  " [  Complete  ] " 2;st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Files Missing  ] " 3
 exit

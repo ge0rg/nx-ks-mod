@@ -7,7 +7,7 @@ checkbox|Refocus on Boot|refocus.sh
 button|Profiles|mod_gui /opt/home/scripts/gui_profiles
 checkbox|Enable Bluetooth|bt.sh
 
-button| Mod v1.62m |ver.sh 
+button| Mod v1.63m |ver.sh 
 button|Uninstall Mod|uninstall.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini

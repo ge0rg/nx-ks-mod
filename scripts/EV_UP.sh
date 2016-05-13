@@ -9,7 +9,8 @@ prefman save 0;
 prefman save 1; 
 sync;sync;sync;
 /opt/home/scripts/popup_timeout  " [  profile loading...  ] " 2;
-reboot ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
+sync;sync;sync;
+st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
 exit
 #
 elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ]; then
@@ -19,7 +20,8 @@ elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /e
 	prefman save 2; 
 	sync;sync;sync;
 	/opt/home/scripts/popup_timeout  " [  profile loading...  ] " 2;
-	reboot ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
+	sync;sync;sync;
+	st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
 	exit
 fi
 exit
