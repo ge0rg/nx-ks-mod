@@ -71,7 +71,7 @@ Custom Functions
 
 Batch Recording LCD-off Recording (record with LCD turned OFF)
 
-Wake Lapse TBBAF (True something-something Auto-Focus)\
+Wake Lapse TBBAF (True Back Button Auto-Focus)\
 BitRate Booster Reboot (when in doubt - reboot)
 
 ** Focus Apps **
@@ -80,7 +80,7 @@ Focus Stacking
 
 Focus Buttons
 
-Pull Speed (set focus-pull speed used on EV+AEL)
+Pull Speed (set focus-pull speed used on EV+HalfShutter)
 
 Bug-Zapper (shifts focus several time in attempt to create video-stacks
 for macro,
@@ -183,17 +183,23 @@ BitRate Booster
 Start recording by adjusting priorities 0.5 sec after recording starts,
 in attempt to give higher stability and increase max bitrate.
 
+**True Back Button Auto Focus (NX 1 only):\
+** The only way to *emulate* Nikon/Canon style BB AF (i.e. removing the
+focus action from the half press shutter, since the focus is on the back
+button).\
+Switch to C AF when AF ON is pressed / Switch to MF when AF ON is
+released
+
 **Thanks to Otto** for the programs that make this possible - keyscan,
 gui, poker, focus stacking, focus buttons, \... to name a few.\
 **Thanks to Vasile** for coming up with the values for the
 bitrate-change and nx500\'s 2.5K mod (the values used here are based on
 his calculations)
 
-**Thanks to the bad weather** recently, which helped by keeping me in
-front the computers. You can get in touch with me on
+You can get in touch with me on
 [www.fb.com/KinoSeed/](http://www.fb.com/KinoSeed/)
 
-Donations
+**Donations**
 
 Otto:
 
@@ -206,10 +212,7 @@ Vasile:
 
 Kino:
 
-I have to go with Otto on this one. Pay it forward.\
-... although producers (especially ones based outside EU) interested in
-access to market for option-deals for literary materials, are quite
-welcome as donations. ; )
+I have to go with Otto on this one. Pay it forward.
 
 LINKS
 
