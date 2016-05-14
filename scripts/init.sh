@@ -1,10 +1,10 @@
 #!/bin/bash
-renice -n -50 -p $$
 hevc=($(st pmu show | grep hevc)); if [[ "${hevc[1]}" == "ON" ]]; then 
 	/opt/home/scripts/popup_timeout  "WARNING: Device is Recording !" 2
 	/opt/home/scripts/popup_timeout  " Mod-loading canceled ! " 2
 	exit; 
 fi
+renice -n -50 -p $$
 export HIB=a
 export EVAS_FONT_DPI=72
 export EINA_LOG_LEVELS=ecore_x:4,evas_main:1
