@@ -1,14 +1,14 @@
-checkbox|Silent Shutter|rolling_shutter.sh
 checkbox|VGA to 2.5K|2K.sh
+checkbox|DC to 2.5K|2K4K.sh
 
+checkbox|Silent Shutter|rolling_shutter.sh
 checkbox|No Rec Limit|r-limit.sh
-checkbox|Refocus on Boot|refocus.sh
 
-button|Profiles|mod_gui /opt/home/scripts/gui_profiles
+checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
 
-button| Mod v1.65m |ver.sh 
-button|Uninstall Mod|uninstall.sh
+button|Profiles|mod_gui /opt/home/scripts/gui_profiles
+button|Uninstall Mod v1.66m|uninstall.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui

@@ -33,6 +33,22 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
            ;;
         *) ;;
         esac
-    fi
+    elif [[ "$1" = "DC" ]]; then
+        case "$2" in
+        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af064:878ea0e3 0x1af068:01aaa0e3 #DC#
+            ;;
+        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af064:878ea0e3 0x1af068:0faca0e3 #UHD#
+            ;;
+        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af064:5a8ea0e3 0x1af068:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af064:388400e3 0x1af068:1eada0e3 #1080P#
+           ;;
+        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af064:2d8ea0e3 0x1af068:05aca0e3 #720P
+           ;;
+        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0x1af064:1e8ea0e3 0x1af068:0aada0e3 #VGA#
+           ;;
+        *) ;;
+        esac
+    fi    
 fi
 exit
