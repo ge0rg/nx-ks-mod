@@ -4,7 +4,7 @@ button|LCD-Off Rec.|nrec.sh
 button|Wake Lapse|wakelapse.sh
 button|BitRate Booster|brb.sh 
 
-button| Mod v1.66m |ver.sh 
+button| Mod v1.67m |ver.sh 
 button|Reboot|reboot.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini
