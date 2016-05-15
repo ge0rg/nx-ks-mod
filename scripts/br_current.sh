@@ -1,7 +1,7 @@
 #!/bin/bash
-renice -n -10 -p $$ > /dev/null
+renice -n -50 -p $$ > /dev/null
 avail_br=(35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250 260 270 280 290 300 310 320)
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
+if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
 #NX500
 mq=$(prefman get 0 0x0000a368  b);  mq=( $mq )
 mq=${mq[5]}
@@ -40,7 +40,7 @@ case "$mz" in
 *) ;;
 esac
 /opt/home/scripts/popup_timeout  " [ Current Bitrate Updated  ] " 2
-elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40" ]; then
+elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
 #NX1
 mq=$(prefman get 0 0x00000338  b);  mq=( $mq ) 
 mq=${mq[5]}

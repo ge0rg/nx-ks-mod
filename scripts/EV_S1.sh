@@ -1,8 +1,6 @@
 #!/bin/bash
-sync;sync;sync
-echo 3 > /proc/sys/vm/drop_caches
-renice -n -10 -p $$
-renice -n +10 -p $(pgrep di-camera-app)
+renice -n -50 -p $$
+renice -n +50 -p $(pgrep di-camera-app)
 af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
 tii=($(systemctl show-environment))

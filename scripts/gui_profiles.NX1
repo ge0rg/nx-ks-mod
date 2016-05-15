@@ -7,5 +7,5 @@ button|Load EV+DN|EV_DOWN.sh
 button|Save FullBackup|FullSaveNX1.sh
 button|Load FullBackup|FullLoadNX1.sh
 
-button|back|mod_gui /opt/home/scripts/gui_focus
+button|back|mod_gui /opt/home/scripts/gui_settings
 button|cancel|killall mod_gui

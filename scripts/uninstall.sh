@@ -1,7 +1,7 @@
 #!/bin/bash
 /opt/home/scripts/popup_ok "LOSE ALL THAT GOODNESS ?" UNINSTALL CANCEL; [  $? -eq 0 ] || exit
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ] ||
- [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ]; then
+if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ] ||
+ [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ]; then
   if [ -x /usr/sbin/bluetoothd.orig ]; then
     mv /opt/home/scripts/popup_timeout /sdcard/popup_timeout
     rm -r /opt/home/scripts/
@@ -12,6 +12,7 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
     mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd
     sync;sync;sync
     mount -o remount,ro /
+    rm -f /tmp/keyscan.pid
     rm -f /root/focus_stack.cfg
     sync;sync;sync
     /sdcard/popup_timeout  " [  Uninstall complete  ] " 4 &

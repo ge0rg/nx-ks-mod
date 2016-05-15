@@ -1,4 +1,4 @@
-button|Video Bitrates|mod_gui /tmp/gui_br
+button|Video Bitrates|cs.sh
 button|Custom Func.|mod_gui /opt/home/scripts/gui_func
 
 button|Focus + Profiles|mod_gui /opt/home/scripts/gui_focus

@@ -1,8 +1,8 @@
-button|4K Pro: ${Pro4K}Mbps|/opt/home/scripts/br_set.sh 4K-ProQ
-button|4K HQ: ${Hq4K}Mbps|/opt/home/scripts/br_set.sh 4K-HQ
-button|HD Pro: ${ProHD}Mbps|/opt/home/scripts/br_set.sh HD-ProQ
-button|HD HQ: ${HqHD}Mbps|/opt/home/scripts/br_set.sh HD-HQ
-button|Current: ${cb}|/opt/home/scripts/br_current.sh
-button|VGA HQ: ${HqVGA}|/opt/home/scripts/br_set.sh VGA-HQ
-button|back|/opt/home/scripts/loadgui.sh
+button|4K Pro: ${Pro4K}Mbps|br_set.sh 4K-ProQ
+button|4K HQ: ${Hq4K}Mbps|br_set.sh 4K-HQ
+button|HD Pro: ${ProHD}Mbps|br_set.sh HD-ProQ
+button|HD HQ: ${HqHD}Mbps|br_set.sh HD-HQ
+button|Current|br_current.sh
+button|VGA HQ: ${HqVGA}Mbps|br_set.sh VGA-HQ
+button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui

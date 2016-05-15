@@ -3,8 +3,8 @@
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] || { $( st app disp lcd ) &&  sleep 1 ; }
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] || exit   
 #
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ] ||
- [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ]; then
+if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ] ||
+ [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ]; then
     if [ ! -x /usr/sbin/bluetoothd.orig ]; then
         /mnt/mmc/scripts/popup_timeout  " [  Installing...  ] " 4 &
         mount -o remount,rw /
@@ -20,11 +20,8 @@ EOF
           sleep 5
           mkdir -p /opt/home/scripts
           cp -ar /mnt/mmc/scripts/* /opt/home/scripts/
-          [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && prefman set 0 0x06a8 l 0
-          [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]  && prefman set 0 0xa6e0 l 0
-          prefman save 0
           sync;sync;sync
-          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 3
+          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 2
     else
           /mnt/mmc/scripts/popup_timeout  " [  BT-mod Detected ] " 2
           /mnt/mmc/scripts/popup_timeout  " [  Let's cleanup...  ] " 4 &
@@ -40,12 +37,11 @@ EOF
           chmod +x /usr/sbin/bluetoothd
           mount -o remount,ro /
           sleep 5  
-          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 3 
+          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 2 
           sync;sync;sync
           reboot
     fi
-      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && 
-      mv /opt/home/scripts/EV_EV.sh /opt/home/scripts/EV_OK.sh || rm -f /opt/home/scripts/EV_RIGHT.sh
+      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ] && mv /opt/home/scripts/EV_EV.sh /opt/home/scripts/EV_OK.sh
       killall dfmsd
       rm /mnt/mmc/info.tg
       rm /mnt/mmc/nx_cs.adj

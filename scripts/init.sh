@@ -1,16 +1,10 @@
 #!/bin/bash
-waitforvideo() {
-	while [[ "${hevc[1]}" == "ON" ]]; do
-		sleep 1;
-		hevc=($(st pmu show | grep hevc)); 
-	done
-}
-hevc=($(st pmu show | grep hevc)); 
-if [[ "${hevc[1]}" == "ON" ]]; then 
-	/opt/home/scripts/popup_timeout  "WARNING: NOT Loading in Video Mode !" 5
-	waitforvideo
+hevc=($(st pmu show | grep hevc)); if [[ "${hevc[1]}" == "ON" ]]; then 
+	/opt/home/scripts/popup_timeout  "WARNING: Device in Video Mode !" 2
+	/opt/home/scripts/popup_timeout  " Loading canceled ! " 2
+	exit; 
 fi
-renice -n -10 -p $$
+renice -n -50 -p $$
 export HIB=a
 export EVAS_FONT_DPI=72
 export EINA_LOG_LEVELS=ecore_x:4,evas_main:1
@@ -37,7 +31,7 @@ export TERM="vt102"
 export USER="root"
 export LOGNAME="root"
 export MULTISENSE_SND_PLAYER="tizen_snd_player"
-nice -n -10 /opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
+nice -n -50 /opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
 sync
 sync
 sync

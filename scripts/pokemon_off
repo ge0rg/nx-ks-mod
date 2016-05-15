@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n -10 -p $$ > /dev/null
+renice -n -50 -p $$ > /dev/null
 ########################################################################
 ############ DO NOT TOUCH ##############################################
 ############ bitrate modified ##########################################
@@ -101,7 +101,7 @@ nx500_hq4=(0xb4046920 0xb4046928)
 nx500_hq5=(0xb4046998 0xb40469aa)
 nx500_hq6=(0xb40469a0 0xb40469b2)
 #
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
+if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
         if [ $1 = "pro1" -o $1 = "pro2" -o $1 = "pro3" ]; then
                 br0=bitrate_nx500pro_$2[0]; br1=bitrate_nx500pro_$2[1]
         else
@@ -111,7 +111,7 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
         if [[  ${!off0}>"" &&  ${!off1}>"" && ${!br0}>"" && ${!br1}>"" ]]; then
                /opt/home/scripts/poker $(pgrep di-camera-app) ${!off0}:${!br0} ${!off1}:${!br1}
         fi
-elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40" ]; then
+elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
                 br0=bitrate_$2[0]; br1=bitrate_$2[1]
                 off0=nx1_$1[0]; off1=nx1_$1[1]
                 if [[  ${!off0}>"" &&  ${!off1}>"" && ${!br0}>"" && ${!br1}>"" ]]; then

@@ -1,6 +1,6 @@
 #!/bin/bash
-renice -n -10 -p $$
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v1.82m ${s}] " 2 &
+renice -n -50 -p $$
+[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v2.00m ${s}] " 2 &
 #############################################
 # Choose Bitrates ( no added spaces! make sure it looks like Pro4K=90 )
 #       Available bitrates in Mbps: 35,40,45,50,55,60,65,70,75,80,85,90,95,
@@ -13,15 +13,15 @@ Hq4K=${Hq4K}    #nx500-hq1          / nx1-hq1&hq2
 HqHD=${HqHD}     #nx500-hq2&hq3&hq4  / nx1-hq3
 HqVGA=${HqVGA}   #nx500-hq5&hq6
 #############################################
-/opt/home/scripts/pokemon pro1 $Pro4K
-/opt/home/scripts/pokemon pro2 $ProHD
-/opt/home/scripts/pokemon pro3 $ProHD
-/opt/home/scripts/pokemon hq1 $Hq4K
-/opt/home/scripts/pokemon hq2 $HqHD
-/opt/home/scripts/pokemon hq3 $HqHD
-/opt/home/scripts/pokemon hq4 $HqHD
-/opt/home/scripts/pokemon hq5 $HqVGA
-/opt/home/scripts/pokemon hq6 $HqVGA
+#/opt/home/scripts/pokemon pro1 $Pro4K
+#/opt/home/scripts/pokemon pro2 $ProHD
+#/opt/home/scripts/pokemon pro3 $ProHD
+#/opt/home/scripts/pokemon hq1 $Hq4K
+#/opt/home/scripts/pokemon hq2 $HqHD
+#/opt/home/scripts/pokemon hq3 $HqHD
+#/opt/home/scripts/pokemon hq4 $HqHD
+#/opt/home/scripts/pokemon hq5 $HqVGA
+#/opt/home/scripts/pokemon hq6 $HqVGA
 #############################################
 systemctl set-environment Pro4K=$Pro4K
 systemctl set-environment ProHD=$ProHD

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ] ||
- [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ]; then
+if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ] ||
+ [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ]; then
 #
 	t1=($(cksum /sdcard/presets/preset0_down1)) ; t2=($(cksum /sdcard/presets/preset0_down2)) ; 
 	[[ $t1 = $t2  ]] && 
@@ -10,6 +10,6 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc
 	sync;sync;sync;
 	/opt/home/scripts/popup_timeout  " [  profile loading...  ] " 2;
 	sync;sync;sync;
-	reboot ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
+	st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
 fi
 exit
