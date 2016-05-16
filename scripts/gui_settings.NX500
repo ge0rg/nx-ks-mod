@@ -7,8 +7,8 @@ checkbox|No Rec Limit|r-limit.sh
 checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
 
-button|Profiles|mod_gui /opt/home/scripts/gui_profiles
-button|Uninstall Mod v1.67m|uninstall.sh
+checkbox|Swap 128MB|swap.sh
+button|Uninstall Mod v1.70m|uninstall.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui

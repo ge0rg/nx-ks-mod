@@ -40,7 +40,7 @@ Main Menu
 
 Video Birtates Custom Functions
 
-Focus Apps Settings
+Focus + Profiles Settings
 
 Hibernate Sleep
 
@@ -74,13 +74,23 @@ Batch Recording LCD-off Recording (record with LCD turned OFF)
 Wake Lapse TBBAF (True Back Button Auto-Focus)\
 BitRate Booster Reboot (when in doubt - reboot)
 
-** Focus Apps **
+** Focus + Profiles **
 
 Focus Stacking
 
 Focus Buttons
 
 Pull Speed (set focus-pull speed used on EV+HalfShutter)
+
+** Profiles**
+
+save/load UP or DN profile
+
+save/load FullBackup (all camera settings)
+
+Saved profiles are stored in /sdcard/presets/
+
+and you can copy and backup them as needed.
 
 Settings
 
@@ -93,22 +103,12 @@ Settings
 
 > Refocus on Boot (return to last focus after hibernation)
 
-> **Profiles \>**
-
 > Enable Bluetooth (use this to enable Bluetooth functionality while the
 > mod is installed)
 
 > Uninstall Mod
 
-** Profiles**
-
-save/load UP or DN profile
-
-save/load FullBackup (all camera settings)
-
-Saved profiles are stored in /sdcard/presets/
-
-and you can copy and backup them as needed.
+** **
 
 Added Functionality
 
