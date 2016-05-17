@@ -7,7 +7,7 @@ for i in "${tii[@]}"; do if [[ $i == "HqHD="* ]]; then HqHD=${i:5}; fi; done
 for i in "${tii[@]}"; do if [[ $i == "HqVGA="* ]]; then HqVGA=${i:6}; fi; done
 cb=$(/opt/home/scripts/gbr)
 [[ $cb > "" ]] && cb=$cb"Mbps" || cb="NotSupported"
-sed -e "s/\${Pro4K}/"$Pro4K"/" -e "s/\${ProHD}/"$ProHD"/"  -e "s/\${Hq4K}/"$Hq4K"/" -e "s/\${HqHD}/"$HqHD"/" -e "s/\${HqVGA}/"$HqVGA"/"  -e "s/\${cb}/"$cb"/" /opt/home/scripts/gui_br.tp >  /opt/home/scripts/gui_br.NX500
-sed -e "s/\${Pro4K}/"$Pro4K"/" -e "s/\${ProHD}/"$ProHD"/"  -e "s/\${Hq4K}/"$Hq4K"/" -e "s/\${HqHD}/"$HqHD"/" -e "s/\${HqVGA}/"$HqVGA"/"  -e "s/\${cb}/"$cb"/" /opt/home/scripts/gui_br.tp >  /opt/home/scripts/gui_br.NX1
+sed -e "s/\${Pro4K}/"$Pro4K"/" -e "s/\${ProHD}/"$ProHD"/"  -e "s/\${Hq4K}/"$Hq4K"/" -e "s/\${HqHD}/"$HqHD"/" -e "s/\${HqVGA}/"$HqVGA"/"  -e "s/\${cb}/"$cb"/" /opt/home/scripts/gui_br.tp >  /tmp/gui_br.NX500
+sed -e "s/\${Pro4K}/"$Pro4K"/" -e "s/\${ProHD}/"$ProHD"/"  -e "s/\${Hq4K}/"$Hq4K"/" -e "s/\${HqHD}/"$HqHD"/" -e "s/\${HqVGA}/"$HqVGA"/"  -e "s/\${cb}/"$cb"/" /opt/home/scripts/gui_br.tp >  /tmp/gui_br.NX1
 sync;sync;sync
 exit
