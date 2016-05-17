@@ -1,6 +1,6 @@
 #!/bin/bash
 renice -n -50 -p $$
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v1.70m ${s}] " 2 &
+[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v1.71m ${s}] " 2 &
 #############################################
 # Choose Bitrates ( no added spaces! make sure it looks like Pro4K=90 )
 #       Available bitrates in Mbps: 35,40,45,50,55,60,65,70,75,80,85,90,95,

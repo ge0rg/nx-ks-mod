@@ -8,7 +8,7 @@ checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
 
 checkbox|Swap 128MB|swap.sh
-button|Uninstall Mod v1.70m|uninstall.sh
+button|Uninstall Mod v1.71m|uninstall.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini
 button|cancel|killall mod_gui
