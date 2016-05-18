@@ -41,7 +41,8 @@ EOF
           sync;sync;sync
           reboot
     fi
-      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && mv /opt/home/scripts/EV_EV.sh /opt/home/scripts/EV_OK.sh
+      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && 
+      mv /opt/home/scripts/EV_EV.sh /opt/home/scripts/EV_OK.sh || rm -f /opt/home/scripts/EV_RIGHT.sh
       killall dfmsd
       rm /mnt/mmc/info.tg
       rm /mnt/mmc/nx_cs.adj
