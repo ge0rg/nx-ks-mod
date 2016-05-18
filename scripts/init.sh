@@ -1,8 +1,14 @@
 #!/bin/bash
-hevc=($(st pmu show | grep hevc)); if [[ "${hevc[1]}" == "ON" ]]; then 
-	/opt/home/scripts/popup_timeout  "WARNING: Device in Video Mode !" 2
-	/opt/home/scripts/popup_timeout  " Loading canceled ! " 2
-	exit; 
+waitforvideo() {
+	while [[ "${hevc[1]}" == "ON" ]]; do
+		sleep 1;
+		hevc=($(st pmu show | grep hevc)); 
+	done
+}
+hevc=($(st pmu show | grep hevc)); 
+if [[ "${hevc[1]}" == "ON" ]]; then 
+	/opt/home/scripts/popup_timeout  "WARNING: NOT Loading in Video Mode !" 2
+	waitforvideo
 fi
 renice -n -50 -p $$
 export HIB=a
