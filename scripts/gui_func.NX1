@@ -2,9 +2,9 @@ button|Batch Recording|brec.sh
 button|LCD-Off Rec.|nrec.sh
 
 button|Wake Lapse|wakelapse.sh
-button|TBBAF|TBBAF.sh
-
 button|BitRate Booster|brb.sh 
+
+button| Mod v1.73m |ver.sh 
 button|Reboot|reboot.sh
 
 button|back|mod_gui /opt/home/scripts/gui_ini
