@@ -20,8 +20,11 @@ EOF
           sleep 5
           mkdir -p /opt/home/scripts
           cp -ar /mnt/mmc/scripts/* /opt/home/scripts/
+          [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && prefman set 0 0x06a8 l 0
+          [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]  && prefman set 0 0xa6e0 l 0
+          prefman save 0
           sync;sync;sync
-          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 2
+          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 3
     else
           /mnt/mmc/scripts/popup_timeout  " [  BT-mod Detected ] " 2
           /mnt/mmc/scripts/popup_timeout  " [  Let's cleanup...  ] " 4 &
@@ -37,7 +40,7 @@ EOF
           chmod +x /usr/sbin/bluetoothd
           mount -o remount,ro /
           sleep 5  
-          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 2 
+          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 3 
           sync;sync;sync
           reboot
     fi

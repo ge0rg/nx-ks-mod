@@ -1,0 +1,54 @@
+#!/bin/bash
+renice -n -50 -p $$
+if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
+    if [[ "$1" = "VGA" ]]; then
+        case "$2" in
+        DC)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:878ea0e3 0xe4420:01aaa0e3 #DC#
+            ;;
+        UHD)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:878ea0e3 0xe4420:0faca0e3 #UHD#
+            ;;
+        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:5a8ea0e3 0xe4420:0aaca0e3 #2.K#
+            ;;
+        1080P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:388400e3 0xe4420:1eada0e3 #1080P#
+           ;;
+        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:2d8ea0e3 0xe4420:05aca0e3 #720P
+           ;;
+        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:1e8ea0e3 0xe4420:0aada0e3 #VGA#
+           ;;
+        *) ;;
+        esac
+    elif [[ "$1" = "720P" ]]; then
+        case "$2" in
+        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:878ea0e3 0xe4414:01aaa0e3 #DC#
+            ;;
+        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:878ea0e3 0xe4414:0faca0e3 #UHD#
+            ;;
+        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:5a8ea0e3 0xe4414:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:388400e3 0xe4414:1eada0e3 #1080P#
+           ;;
+        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:2d8ea0e3 0xe4414:05aca0e3 #720P
+           ;;
+        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:1e8ea0e3 0xe4414:0aada0e3 #VGA#
+           ;;
+        *) ;;
+        esac
+    elif [[ "$1" = "DC" ]]; then
+        case "$2" in
+        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:878ea0e3 0xe43f0:01aaa0e3 #DC#
+            ;;
+        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:878ea0e3 0xe43f0:0faca0e3 #UHD#
+            ;;
+        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:5a8ea0e3 0xe43f0:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:388400e3 0xe43f0:1eada0e3 #1080P#
+           ;;
+        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:2d8ea0e3 0xe43f0:05aca0e3 #720P
+           ;;
+        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:1e8ea0e3 0xe43f0:0aada0e3 #VGA#
+           ;;
+        *) ;;
+        esac
+    fi    
+fi
+exit

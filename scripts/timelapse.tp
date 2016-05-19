@@ -9,7 +9,7 @@ lapsing() {
 	end=$((SECONDS+$1))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
-		st key push s1 && st key click s2 && st key release s1
+		st cap capt single start
 	    sleep $2
 	done
 	lapsedone

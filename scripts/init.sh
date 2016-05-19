@@ -7,7 +7,7 @@ waitforvideo() {
 }
 hevc=($(st pmu show | grep hevc)); 
 if [[ "${hevc[1]}" == "ON" ]]; then 
-	/opt/home/scripts/popup_timeout  "WARNING: NOT Loading in Video Mode !" 2
+	/opt/home/scripts/popup_timeout  "WARNING: NOT Loading in Video Mode !" 5
 	waitforvideo
 fi
 renice -n -50 -p $$
