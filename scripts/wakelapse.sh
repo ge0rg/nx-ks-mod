@@ -1,5 +1,13 @@
 #!/bin/bash
-renice -n -50 -p $$
+free && sync && sync && sync && echo 3 > /proc/sys/vm/drop_caches && free
+hevc=($(st pmu show | grep hevc)); 
+if [[ "${hevc[1]}" == "ON" ]]; then 
+	/opt/home/scripts/popup_timeout  "Video Mode !?" 3
+	/opt/home/scripts/popup_timeout  "Are you asking for trouble?" 2
+	/opt/home/scripts/popup_timeout  "Trouble comes in: 3, 2,... 1" 2
+	killall mod_gui
+	exit
+fi
 sleepytime=$(/opt/home/scripts/popup_entry "Start Time in :" "Set Minutes" Cancel 10 number )
 [[ $sleepytime =~ ^[0-9]+$ ]] || exit
 #
@@ -15,10 +23,12 @@ chmod +x /opt/home/scripts/auto/tl.sh
 #
 sleepytime=$(($sleepytime*60))
 #
+/usr/bin/st app nx capture af-mode manual
+/usr/bin/st cap capdtm setusr AFMODE 0x70003
 af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
 echo $pos_temp > /sdcard/presets/hib
 sync; sync; sync;
 sleep 0.25
 #
-[[ $sleepytime > "0" ]] && ( rtcwake -m mem -s $sleepytime && reboot ) || /opt/home/scripts/auto/tl.sh
+[[ $sleepytime > "0" ]] && $(  /opt/home/scripts/popup_timeout  "Wakeup in $(($sleepytime/60))min. Zzzz." 3 && rtcwake -m mem -s $sleepytime && reboot ) || /opt/home/scripts/auto/tl.sh

@@ -1,5 +1,4 @@
 #!/bin/bash
-renice -n -50 -p $$
 tii=($(systemctl show-environment))
 for i in "${tii[@]}"; do if [[ $i == "p_7="* ]]; then p_7=${i:4}; fi; done
 #

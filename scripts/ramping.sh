@@ -1,53 +1,38 @@
 #!/bin/bash
-renice -n -50 -p $$
-getspeed() { 
-		if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
-			sp=$(prefman get 0 0xa340  b);
-		elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40" ]; then
-			sp=$(prefman get 0 0x310  b);
-		fi
-		sp=( $sp ); sp=${sp[5]}; 
- }
-#
-tl_d=$(/opt/home/scripts/popup_entry "Time-lapse duration:" "Set Minutes" Cancel 10 number )
-[[ $tl_d =~ ^[0-9]+$ ]] || exit
-tl_d=$(($tl_d*60))
-#
-tl_g=$(/opt/home/scripts/popup_entry  "Time between images :" "Set Seconds" Cancel 5 number)
-[[ $tl_g =~ ^[0-9]+$ ]] || exit
-#
-#exp_s=$(/opt/home/scripts/popup_entry  "Exp Speed at START   1 / X :" "Set Speed" Cancel "15" )
-/opt/home/scripts/popup_ok  "Exposure Speed at START" "Adjust settings and :" "SET SPEED"
-getspeed()
-exp_s = $sp;
-#
-/opt/home/scripts/popup_ok  "Exposure Speed at END" "Adjust settings and :" "SET SPEED"
-getspeed()
-exp_e = $sp;
-#
-rmp_s=$(/opt/home/scripts/popup_entry  "Ramps starts after :" "Set Minutes" Cancel $((tl_d/2)) number)
-[[ $rmp_s =~ ^[0-9]+$ ]] || exit
-rmp_s=$(($rmp_s*60))
-#
-rmp_d=$(/opt/home/scripts/popup_entry  "Ramp duration:" "Set Minutes" Cancel 1 number)
-[[ $rmp_d =~ ^[0-9]+$ ]] || exit
-rmp_d=$(($rmp_d*60))
-#
-sleepytime=$(/opt/home/scripts/popup_entry "Delay Start           sleep for :" "Set Minutes and START" Cancel 10 number )
-[[ $sleepytime =~ ^[0-9]+$ ]] || exit
-#
-#
-sed -e "s/\${tl_d}/"$tl_d"/" -e "s/\${tl_g}/"$tl_g"/"   /opt/home/scripts/timelapse.tp >  /opt/home/scripts/auto/tl.sh
+#############################################
+tii=($(systemctl show-environment))
+for i in "${tii[@]}"; do if [[ $i == "p_1="* ]]; then p_1=${i:4}; fi; done
+for i in "${tii[@]}"; do if [[ $i == "p_2="* ]]; then p_2=${i:4}; fi; done
+for i in "${tii[@]}"; do if [[ $i == "p_3="* ]]; then p_3=${i:4}; fi; done
+for i in "${tii[@]}"; do if [[ $i == "p_4="* ]]; then p_4=${i:4}; fi; done
+for i in "${tii[@]}"; do if [[ $i == "p_5="* ]]; then p_5=${i:4}; fi; done
+for i in "${tii[@]}"; do if [[ $i == "p_6="* ]]; then p_6=${i:4}; fi; done
+for i in "${tii[@]}"; do if [[ $i == "p_7="* ]]; then p_7=${i:4}; fi; done
+#############################################
+[[ $p_1 = "" ]] &&  systemctl set-environment p_1=90 &&  p_1=90 
+[[ $p_2 = "" ]] &&  systemctl set-environment p_2=10 &&  p_2=10 
+[[ $p_3 = "" ]] &&  systemctl set-environment p_3=75 &&  p_3=15 
+[[ $p_4 = "" ]] &&  systemctl set-environment p_4=150 && p_4=150
+[[ $p_5 = "" ]] &&  systemctl set-environment p_5=30 &&  p_5=30 
+[[ $p_6 = "" ]] &&  systemctl set-environment p_6=10 &&  p_6=10 
+[[ $p_7 = "" ]] &&  systemctl set-environment p_7=0 && p_7=0
+#############################################
+p_1=$(($p_1*60))
+p_5=$(($p_5*60))
+p_6=$(($p_6*60))
+sleepytime=$(($p_7*60))
+#############################################
+sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/"  -e "s/\${p_7}/"$p_7"/"  /opt/home/scripts/ramplapse.tp >  /opt/home/scripts/auto/tl.sh
 chmod +x /opt/home/scripts/auto/tl.sh
 #
-sleepytime=$(($sleepytime*60))
-#
+/usr/bin/st app nx capture af-mode manual
+/usr/bin/st cap capdtm setusr AFMODE 0x70003
 af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
 echo $pos_temp > /sdcard/presets/hib
 sync; sync; sync;
+free && sync && sync && sync && echo 3 > /proc/sys/vm/drop_caches && free
 sleep 0.25
 #
-[[ $sleepytime > "0" ]] && ( rtcwake -m mem -s $sleepytime && reboot ) || /opt/home/scripts/auto/tl.sh
+[[ $sleepytime > "0" ]] && $( /opt/home/scripts/popup_timeout  "Wakeup in $(($sleepytime/60))min. Zzzz." 3 && rtcwake -m mem -s $sleepytime && reboot ) || /opt/home/scripts/auto/tl.sh
 
-/opt/home/scripts/popup_timeout  "Exposure Speed at ENDExposure Speed at ENDExposure Speed at ENDExposure Speed at END" 5
