@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n -50 -p $$
+renice -n -10 -p $$
 yell() { echo "$0: $*" >&2; }
 die() { yell "$*"; exit 111; }
 ticking() {

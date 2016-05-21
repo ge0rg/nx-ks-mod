@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n -50 -p $$  > /dev/null
+renice -n -10 -p $$  > /dev/null
 br=$(/opt/home/scripts/popup_entry "Change Bitrate for $1" "Apply Change" Cancel $( /opt/home/scripts/gbr ) number)
 [[  "$br" == "" ]] && exit
 #check if selected br is available

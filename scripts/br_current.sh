@@ -1,5 +1,5 @@
 #!/bin/bash
-renice -n -50 -p $$ > /dev/null
+renice -n -10 -p $$ > /dev/null
 avail_br=(35 40 45 50 55 60 65 70 75 80 85 90 95 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250 260 270 280 290 300 310 320)
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]; then
 #NX500

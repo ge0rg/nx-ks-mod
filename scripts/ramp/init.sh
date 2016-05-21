@@ -7,7 +7,7 @@ if [[ "${hevc[1]}" == "ON" ]]; then
 	killall mod_gui
 	exit
 fi
-renice -n -50 -p $$
+renice -n -10 -p $$
 tii=($(systemctl show-environment))
 for i in "${tii[@]}"; do if [[ $i == "p_1="* ]]; then p_1=${i:4}; fi; done
 for i in "${tii[@]}"; do if [[ $i == "p_2="* ]]; then p_2=${i:4}; fi; done

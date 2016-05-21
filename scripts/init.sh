@@ -10,7 +10,7 @@ if [[ "${hevc[1]}" == "ON" ]]; then
 	/opt/home/scripts/popup_timeout  "WARNING: NOT Loading in Video Mode !" 5
 	waitforvideo
 fi
-renice -n -50 -p $$
+renice -n -10 -p $$
 export HIB=a
 export EVAS_FONT_DPI=72
 export EINA_LOG_LEVELS=ecore_x:4,evas_main:1
@@ -37,7 +37,7 @@ export TERM="vt102"
 export USER="root"
 export LOGNAME="root"
 export MULTISENSE_SND_PLAYER="tizen_snd_player"
-nice -n -50 /opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
+nice -n -10 /opt/home/scripts/keyscan /dev/event0 /dev/event1 /opt/home/scripts/ 
 sync
 sync
 sync
