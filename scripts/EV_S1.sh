@@ -1,4 +1,6 @@
 #!/bin/bash
+sync;sync;sync
+echo 3 > /proc/sys/vm/drop_caches
 renice -n -50 -p $$
 renice -n +50 -p $(pgrep di-camera-app)
 af_info=($(st cap iq af pos))

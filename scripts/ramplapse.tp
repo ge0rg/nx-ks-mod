@@ -5,7 +5,7 @@ rm -f /opt/home/scripts/auto/tl.sh
 /usr/bin/st app nx capture af-mode manual
 /usr/bin/st cap capdtm setusr AFMODE 0x70003
 sync;sync;sync;
-free && sync && sync && sync && echo 3 > /proc/sys/vm/drop_caches && free
+echo 3 > /proc/sys/vm/drop_caches
 yell() { [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Time-lapse canceled " 2; }
 die() { yell ; rm -f /sdcard/presets/lapsing;  kill $$; exit ; }
 cancel() {
@@ -16,18 +16,25 @@ cancel() {
 }
 ez() {
     	t=$(( 1000*(SECONDS-$ramp_start_clock)/$ramp_length ))
-     	#
     	exp=$(( ((1000-$t)*$exp_start + $t*$exp_end)/1000 ));
     }
+ez2() {
+    	t=$(( 1000*(SECONDS-$ramp_start_clock)/($ramp_length/2) ))
+		if [[ $t -lt "1000"  ]]; then 
+			t=$(( $t*$t/2000 ))
+        elif [[  $t -lt "2000"  ]]; then
+            t=$(( 2*$t-5*$t*$t/10000-1000 ));
+        fi
+        exp=$(( ((1000-$t)*$exp_start + $t*$exp_end)/1000 ));
+    }    
 lapsing() {
 	end=$((SECONDS+$1))  
 	[ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.40$ /etc/version.info) = "1.40"  ] && nx1="good"
 	[ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]  && nx500="good"
 	ramp_start_clock=$(($SECONDS+$ramp_start))
-	ramp_end_clock=$(($SECONDS+$ramp_start+$ramp_length))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
-		[ $SECONDS -gt $ramp_start_clock -a $SECONDS -lt $(($ramp_start_clock+$ramp_length))  ] && ez
+		[ $SECONDS -gt $ramp_start_clock -a $SECONDS -lt $(($ramp_start_clock+$ramp_length))  ] && ez2
 		[[ $nx1 = "good"  ]] && prefman set 0 0x0310 l $exp
 		[[ $nx500 = "good" ]] &&  prefman set 0 0xa340 l $exp
 		/usr/bin/st app mode m
@@ -48,7 +55,7 @@ lapsedone() {
 total_duration=${p_1} 
 img_gap=${p_2} 
 exp_start=${p_3} 
-exp_end=${p_4} 
+exp_end=${p_4}
 ramp_start=${p_5} 
 ramp_length=${p_6} 
 af_info=($(st cap iq af pos))

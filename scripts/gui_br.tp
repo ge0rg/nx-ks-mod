@@ -4,5 +4,5 @@ button|HD Pro: ${ProHD}Mbps|/opt/home/scripts/br_set.sh HD-ProQ
 button|HD HQ: ${HqHD}Mbps|/opt/home/scripts/br_set.sh HD-HQ
 button|Current: ${cb}|/opt/home/scripts/br_current.sh
 button|VGA HQ: ${HqVGA}|/opt/home/scripts/br_set.sh VGA-HQ
-button|back|/opt/home/scripts/mod_gui /opt/home/scripts/gui_ini
+button|back|/opt/home/scripts/loadgui.sh
 button|cancel|killall mod_gui

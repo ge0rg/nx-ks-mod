@@ -20,4 +20,4 @@ fi
 sp=( $sp ); sp=${sp[5]}; 
 #
 systemctl set-environment p_4=$sp
-/opt/home/scripts/ramp/init.sh
+/opt/home/scripts/loader.sh "/opt/home/scripts/ramp/init.sh"

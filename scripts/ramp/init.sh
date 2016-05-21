@@ -7,6 +7,7 @@ if [[ "${hevc[1]}" == "ON" ]]; then
 	killall mod_gui
 	exit
 fi
+renice -n -50 -p $$
 tii=($(systemctl show-environment))
 for i in "${tii[@]}"; do if [[ $i == "p_1="* ]]; then p_1=${i:4}; fi; done
 for i in "${tii[@]}"; do if [[ $i == "p_2="* ]]; then p_2=${i:4}; fi; done
@@ -28,7 +29,4 @@ sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\
 sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/" -e "s/\${p_7}/"$p_7"/" /opt/home/scripts/gui_ramp_ov.tp > /tmp/gui_ramp.NX1
 #
 sync;sync;sync;
-killall mod_gui
-killall popup_entry
-free && sync && sync && sync && echo 3 > /proc/sys/vm/drop_caches && free
-/opt/home/scripts/mod_gui /tmp/gui_ramp
+/opt/home/scripts/loader.sh "/opt/home/scripts/mod_gui /tmp/gui_ramp"

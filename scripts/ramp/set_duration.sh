@@ -6,4 +6,4 @@ p_1=$(/opt/home/scripts/popup_entry "Time-lapse duration:" "Set Minutes" Cancel 
 [[ $p_1 =~ ^[0-9]+$ ]] || exit
 #
 systemctl set-environment p_1=$p_1
-/opt/home/scripts/ramp/init.sh
+/opt/home/scripts/loader.sh "/opt/home/scripts/ramp/init.sh"

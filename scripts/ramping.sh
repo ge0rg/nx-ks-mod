@@ -31,7 +31,7 @@ af_info=($(st cap iq af pos))
 pos_temp=${af_info[2]} 
 echo $pos_temp > /sdcard/presets/hib
 sync; sync; sync;
-free && sync && sync && sync && echo 3 > /proc/sys/vm/drop_caches && free
+echo 3 > /proc/sys/vm/drop_caches
 sleep 0.25
 #
 [[ $sleepytime > "0" ]] && $( /opt/home/scripts/popup_timeout  "Wakeup in $(($sleepytime/60))min. Zzzz." 3 && rtcwake -m mem -s $sleepytime && reboot ) || /opt/home/scripts/auto/tl.sh

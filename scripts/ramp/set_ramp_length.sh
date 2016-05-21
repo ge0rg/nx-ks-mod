@@ -6,5 +6,5 @@ p_6=$(/opt/home/scripts/popup_entry  "Ramp duration:" "Set Minutes" Cancel $p_6 
 [[ $p_6 =~ ^[0-9]+$ ]] || mod_gui /opt/home/scripts/gui_ramp
 #
 systemctl set-environment p_6=$p_6
-/opt/home/scripts/ramp/init.sh
+/opt/home/scripts/loader.sh "/opt/home/scripts/ramp/init.sh"
 

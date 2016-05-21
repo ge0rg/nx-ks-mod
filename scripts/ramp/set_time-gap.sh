@@ -6,4 +6,4 @@ p_2=$(/opt/home/scripts/popup_entry  "Time between images :" "Set Seconds" Cance
 [[ $p_2 =~ ^[0-9]+$ ]] || mod_gui /opt/home/scripts/gui_ramp
 #
 systemctl set-environment p_2=$p_2
-/opt/home/scripts/ramp/init.sh
+/opt/home/scripts/loader.sh "/opt/home/scripts/ramp/init.sh"

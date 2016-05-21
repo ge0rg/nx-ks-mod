@@ -1,5 +1,4 @@
 #!/bin/bash
-free && sync && sync && sync && echo 3 > /proc/sys/vm/drop_caches && free
 hevc=($(st pmu show | grep hevc)); 
 if [[ "${hevc[1]}" == "ON" ]]; then 
 	/opt/home/scripts/popup_timeout  "Video Mode !?" 3
