@@ -13,10 +13,11 @@ cancel() {
 	done
 }
 lapsing() {
+	[ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.11$ /etc/version.info) = "1.11" ]  && nx500="good"
 	end=$((SECONDS+$1))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
-		st cap capt single start
+		[[ $nx500 = "good" ]] &&  st cap capt single start || $(st key push s1 && st key click s2 && st key release s1)
 	    sleep $2
 	done
 	lapsedone

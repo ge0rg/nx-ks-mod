@@ -39,7 +39,7 @@ lapsing() {
 		[[ $nx500 = "good" ]] &&  prefman set 0 0xa340 l $exp
 		/usr/bin/st app mode m
 		sleep $2
-		st cap capt single start
+		[[ $nx500 = "good" ]] &&  st cap capt single start || $(st key push s1 && st key click s2 && st key release s1)
 	done
 	lapsedone
 }
