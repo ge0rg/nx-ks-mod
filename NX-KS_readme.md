@@ -13,7 +13,7 @@ How to install:
 5) when BT-Mod is complete there will be \[ Installation Complete \]
 message, followed by reboot
 
-6) after boot, you will see \[ Mod V1.xx \] (if you don\'t see it in 15
+6) after boot, you will see \[ Mod V2.xx \] (if you don\'t see it in 15
 seconds, turn on the Bluetooth)
 
  * x) to uninstall select: main menu \> settings\> Uninstall Mod*
@@ -26,8 +26,6 @@ UP: load UP profile
 
 DOWN: load DN profile
 
-RIGHT: Bug-Zapper
-
 Half-Press-Shutter: focus pull
 
 mobile: telnet
@@ -38,41 +36,24 @@ OK: Main Menu (NX1)
 
 Main Menu
 
-Video Birtates Custom Functions
+Time-Lapse Custom Functions
 
 Focus + Profiles Settings
 
 Hibernate Sleep
 
-> Video Bitrates
+** Time-Lapse**
 
-Bitrates are grouped by resolution group / quality. Note that for NX1
-high-fps bitrates will be as the ones set for 4K/UHD.
+Wake Lapse Schedule time-lapse
 
-Changing bitrates for a given group is persistent (it will survive
-reboot). Changing "current" bitrate changes only temporary the current
-settings for the resolution/quality, which is selected at the moment,
-and it will be lost on reboot.
+Ramping Time-lapse with ramping capabilities\
 
-Accepted bitrate values are in essence from 40Mbps to 320Mbps in 10Mbps
-increments.
-
-> Complete list:
-
-> 35,40,45,50,55,60,65,70,75,80,85,90,95,
-
-> 100,110,120,130,140,150,160,170,180,190,
-
-> 200,210,220,230,240,250,260,270,280,290,
-
-> 300,310,320
-
-Custom Functions
+** Custom Functions**
 
 Batch Recording LCD-off Recording (record with LCD turned OFF)
 
-Wake Lapse TBBAF (True Back Button Auto-Focus)\
-BitRate Booster Reboot (when in doubt - reboot)
+LCD-Off Rec. Start video recording with LCD turned off\
+** **
 
 ** Focus + Profiles **
 
@@ -96,8 +77,6 @@ Settings
 
 > Silent Shutter (nx500 only)
 
-> VGA to 2.5K (nx500 only)
-
 > No Rec Limit (on nx500 4K/UHD limits remain, NX1 has problems with too
 > long files)
 
@@ -106,9 +85,10 @@ Settings
 > Enable Bluetooth (use this to enable Bluetooth functionality while the
 > mod is installed)
 
-> Uninstall Mod
+> Swap 128MB (create virtual memory for fallback purposes, in case we
+> run out of RAM)
 
-** **
+> Uninstall Mod
 
 Added Functionality
 
@@ -171,41 +151,17 @@ defined time period, upon wake-up it starts by refocusing to the focus
 position when Wake Lapse was started, and then starts taking images with
 user specified time-gap between them, for user-specified duration.
 
-BitRate Booster
-
-Start recording by adjusting priorities 0.5 sec after recording starts,
-in attempt to give higher stability and increase max bitrate.
-
-**True Back Button Auto Focus (NX 1 only):\
-** The only way to *emulate* Nikon/Canon style BB AF (i.e. removing the
-focus action from the half press shutter, since the focus is on the back
-button).\
-Switch to C AF when AF ON is pressed / Switch to MF when AF ON is
-released
-
 **Thanks to Otto** for the programs that make this possible - keyscan,
-gui, poker, focus stacking, focus buttons, \... to name a few.\
-**Thanks to Vasile** for coming up with the values for the
-bitrate-change and nx500\'s 2.5K mod (the values used here are based on
-his calculations)
-
+gui, focus stacking, focus buttons, \... to name a few.\
+\
 You can get in touch with me on
 [www.fb.com/KinoSeed/](http://www.fb.com/KinoSeed/)
 
 Donations
 
-Otto:
-
 Q: So, where\'s the **Donate** button? A: Nowhere. Find a suitable
 charity and donate. If you cannot afford it, find a local charity and
 see if they need help in person - it will do you a world of good.\
-
-Vasile:
-<https://docs.google.com/spreadsheets/u/1/d/1azq3GqVkI3uimTLABokyHcoTACackLvKDu5TcGo_Gsg/pubhtml>
-
-Kino:
-
-I have to go with Otto on this one. Pay it forward.
 
 LINKS
 

@@ -1,11 +1,11 @@
 button|Batch Recording|brec.sh
 button|LCD-Off Rec.|nrec.sh
 
-button|Wake Lapse|wakelapse.sh
-button|BitRate Booster|brb.sh 
-
-button| Mod v2.00m |ver.sh 
 button|Reboot|reboot.sh
+button|ZoomZoom|zoomzoom.sh
 
-button|back|mod_gui /opt/home/scripts/gui_ini
+button| Mod v2.07 |ver.sh
+button|HDR|1HDR.sh
+
+button|back|/opt/home/scripts/loadgui.sh
 button|cancel|killall mod_gui

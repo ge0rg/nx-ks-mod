@@ -12,7 +12,6 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc
     mv /usr/sbin/bluetoothd.orig /usr/sbin/bluetoothd
     sync;sync;sync
     mount -o remount,ro /
-    rm -f /tmp/keyscan.pid
     rm -f /root/focus_stack.cfg
     sync;sync;sync
     /sdcard/popup_timeout  " [  Uninstall complete  ] " 4 &

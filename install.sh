@@ -21,7 +21,7 @@ EOF
           mkdir -p /opt/home/scripts
           cp -ar /mnt/mmc/scripts/* /opt/home/scripts/
           sync;sync;sync
-          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 2
+          /mnt/mmc/scripts/popup_timeout  " [ Installation Complete ] " 3
     else
           /mnt/mmc/scripts/popup_timeout  " [  BT-mod Detected ] " 2
           /mnt/mmc/scripts/popup_timeout  " [  Let's cleanup...  ] " 4 &
@@ -37,7 +37,7 @@ EOF
           chmod +x /usr/sbin/bluetoothd
           mount -o remount,ro /
           sleep 5  
-          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 2 
+          /mnt/mmc/scripts/popup_timeout  " [  System is now Mod-clean...  ] " 3 
           sync;sync;sync
           reboot
     fi
@@ -46,7 +46,7 @@ EOF
       rm /mnt/mmc/info.tg
       rm /mnt/mmc/nx_cs.adj
       rm /mnt/mmc/install.sh
-      rm /mnt/mmc/NX-KS_readme.odt
+      rm /mnt/mmc/NX-KS2_readme.odt
       rm -r /mnt/mmc/scripts/
     sync;sync;sync
     reboot

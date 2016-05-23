@@ -1,0 +1,8 @@
+checkbox|DC to 2.5K|res_DC2K.sh
+checkbox|DC to 1080p|res_DCHD.sh
+
+checkbox|UHD to 2.5K|res_UHD2K.sh
+checkbox|UHD to 1080p|res_UHDHD.sh
+
+button|back|mod_gui /opt/home/scripts/gui_settings
+button|cancel|killall mod_gui

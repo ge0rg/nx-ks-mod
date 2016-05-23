@@ -3,6 +3,6 @@
 #
 swapon /opt/usr/home/swapmod 
 sysctl vm.swappiness=50&
-systemctl set-environment swmo="Swap"&
+systemctl set-environment swmo="s"&
 [[ $swinit = "1" ]] && /opt/home/scripts/br_up.sh && /opt/home/scripts/popup_timeout  " [ 128MB Swap Ready ] " 2  & swinit="0"
 exit

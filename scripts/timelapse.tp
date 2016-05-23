@@ -1,35 +1,46 @@
 #!/bin/bash
-renice -n -50 -p $$
 rm -f /sdcard/presets/lapsing
 rm -f /opt/home/scripts/auto/tl.sh
+/usr/bin/st app nx capture af-mode manual
+/usr/bin/st cap capdtm setusr AFMODE 0x70003
 sync;sync;sync;
 yell() { [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Time-lapse canceled " 2; }
-die() { yell ; rm -f /sdcard/presets/lapsing; exit ; }
+die() { yell ; rm -f /sdcard/presets/lapsing; kill $$; exit ; }
+zzz() {
+	rm -f /sdcard/presets/lapsing
+	sync;sync;sync; sleep 1
+	[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Zzzzzz..... " 1
+	systemctl hybrid-sleep
+}
+cancel() {
+	while :; do
+		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
+	    sleep 1
+	done
+}
 lapsing() {
+	[ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]  && nx500="good"
 	end=$((SECONDS+$1))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
-		st key push s1 && st key click s2 && st key release s1
+		[[ $nx500 = "good" ]] &&  st cap capt single start || $(st key push s1 && st key click s2 && st key release s1)
 	    sleep $2
 	done
 	lapsedone
 }
 lapsedone() {
-	rm -f /sdcard/presets/lapsing
 	[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Time-lapse Complete " 4 
-	[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Zzzzzz..... " 2 
-	sync;sync;sync;
-	sleep 1
-	systemctl hybrid-sleep
+	[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && { /opt/home/scripts/popup_ok  "  Remain awake? " "Yes" "Zzzzz..." ; [[  $? -eq 0 ]] && die  || zzz; }
+	sleep 45
+	zzz
 }
 tl_d=${tl_d} 
 tl_g=${tl_g} 
 af_info=($(st cap iq af pos))
 st cap iq af mv 10 $(($(head -n 1 /sdcard/presets/hib) - ${af_info[2]} )) 10
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " Scheduled time-lapse... " 5
-/usr/bin/st app nx capture af-mode manual
-/usr/bin/st cap capdtm setusr AFMODE 0x70003
 cat /dev/event0 > /sdcard/presets/lapsing &
 cat /dev/event1 >> /sdcard/presets/lapsing &
 sync;sync;sync;
+cancel &
 lapsing $tl_d $tl_g

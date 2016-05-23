@@ -4,5 +4,5 @@ button|Focus Buttons|focus_buttons
 button|Profiles|mod_gui /opt/home/scripts/gui_profiles
 button|Focus-Pull Speed|fpspeed.sh
 
-button|back|mod_gui /opt/home/scripts/gui_ini
+button|back|/opt/home/scripts/loadgui.sh
 button|cancel|killall mod_gui

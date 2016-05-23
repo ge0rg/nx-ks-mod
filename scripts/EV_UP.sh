@@ -10,6 +10,6 @@ if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc
 	sync;sync;sync;
 	/opt/home/scripts/popup_timeout  " [  profile loading...  ] " 2;
 	sync;sync;sync;
-	st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
+	reboot ) || /opt/home/scripts/popup_timeout  " [  Preset Missing  ] " 3
 fi
 exit

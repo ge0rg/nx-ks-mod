@@ -1,0 +1,5 @@
+button|Wake Lapse|wakelapse.sh
+button|Ramping|/opt/home/scripts/ramp/init.sh
+
+button|back|/opt/home/scripts/loadgui.sh
+button|cancel|killall mod_gui

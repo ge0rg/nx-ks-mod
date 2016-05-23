@@ -1,5 +1,4 @@
 #!/bin/bash
-renice -n -50 -p $$ 
 [[ -f /sdcard/presets/FullSave0 && 
 -f /sdcard/presets/FullSave1 &&
 -f /sdcard/presets/FullSave2 &&
@@ -21,7 +20,7 @@ renice -n -50 -p $$
 	prefman load_file 8 /sdcard/presets/FullSave8; 
 	prefman load_file 9 /sdcard/presets/FullSave9; 
 	prefman load_file 10 /sdcard/presets/FullSave10; 
-	prefman save EMMC; 
+	prefman save; 
 	sync;sync;sync;
 	/opt/home/scripts/popup_timeout  " [  Loading Complete  ] " 2; st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Files Missing  ] " 3
 exit

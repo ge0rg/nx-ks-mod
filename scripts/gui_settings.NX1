@@ -1,11 +1,11 @@
-checkbox|Swap 128MB|swap.sh
+checkbox|No Lens Release|nolens.sh
 checkbox|No Rec Limit|r-limit.sh
 
 checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
 
-button| Mod v2.00m |ver.sh 
-button|Uninstall Mod|uninstall.sh
+checkbox|Swap 128MB|swap.sh
+button|Uninstall Mod v2.07|uninstall.sh
 
-button|back|mod_gui /opt/home/scripts/gui_ini
+button|back|/opt/home/scripts/loadgui.sh
 button|cancel|killall mod_gui
