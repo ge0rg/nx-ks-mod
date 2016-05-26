@@ -7,5 +7,8 @@ button|Ramping|/opt/home/scripts/ramp/init.sh
 button|Reboot|reboot.sh
 button|BitRate Booster|brb.sh 
 
+button| Mod v1.82m |ver.sh 
+button|ZoomZoom|zoomzoom.sh
+
 button|back|/opt/home/scripts/loadgui.sh
 button|cancel|killall mod_gui
