@@ -1,0 +1,8 @@
+button|4K Pro: ${Pro4K}Mbps|/opt/usr/nx-ks/br_set.sh 4K-ProQ
+button|4K HQ: ${Hq4K}Mbps|/opt/usr/nx-ks/br_set.sh 4K-HQ
+button|HD Pro: ${ProHD}Mbps|/opt/usr/nx-ks/br_set.sh HD-ProQ
+button|HD HQ: ${HqHD}Mbps|/opt/usr/nx-ks/br_set.sh HD-HQ
+button|Current: ${cb}|/opt/usr/nx-ks/br_current.sh
+button| | 
+button|GO BACK|@/opt/usr/nx-ks/gui_func.NX1
+button|CANCEL|/opt/usr/nx-ks/gui_exit.sh

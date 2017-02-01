@@ -1,14 +1,13 @@
 #!/bin/bash
 #
 st app mode m
-/opt/home/scripts/popup_timeout  "Adjust Exp. Speed and press EV" 2
+/opt/usr/nx-ks/popup_timeout  "Adjust Exp. Speed and press EV" 2
 #
 cat /dev/event1 > /tmp/getsp &
 end=$((SECONDS+30))
 while [ $SECONDS -lt $end ]; do
-	if [[ "$(cat /tmp/getsp)" > ""  ]]; then rm /tmp/getsp; 
-		break; fi
-    sleep 0.25
+	if [[ "$(cat /tmp/getsp)" > ""  ]]; then rm /tmp/getsp; break; fi
+	sleep 0.25
 done
 #
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
@@ -19,5 +18,6 @@ fi
 #
 sp=( $sp ); sp=${sp[5]}; 
 #
+[[ $sp -gt "20000" ]] && sp=$(($sp-65536))
 systemctl set-environment p_3=$sp
-/opt/home/scripts/loader.sh "/opt/home/scripts/ramp/init.sh"
+/opt/usr/nx-ks/loader.sh "/opt/usr/nx-ks/ramp/init.sh"

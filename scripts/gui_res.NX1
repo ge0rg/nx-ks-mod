@@ -1,8 +1,11 @@
-checkbox|DC to 2.5K|res_DC2K.sh
-checkbox|DC to 1080p|res_DCHD.sh
+checkbox|DC as UHD|res_DCUHD.sh
+checkbox|UHD as DC|res_UHDDC.sh
 
-checkbox|UHD to 2.5K|res_UHD2K.sh
-checkbox|UHD to 1080p|res_UHDHD.sh
+checkbox|DC as 1080p|res_DCHD.sh
+checkbox|UHD as 1080p|res_UHDHD.sh
 
-button|back|mod_gui /opt/home/scripts/gui_settings
-button|cancel|killall mod_gui
+checkbox|VGA as DC|res_VGADC.sh
+checkbox|VGA as UHD|res_VGAUHD.sh
+
+button|GO BACK|@/opt/usr/nx-ks/gui_func.NX1
+button|CANCEL|/opt/usr/nx-ks/gui_exit.sh

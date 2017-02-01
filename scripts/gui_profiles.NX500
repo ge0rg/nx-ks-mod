@@ -7,5 +7,5 @@ button|Load EV+DN|EV_DOWN.sh
 button|Save FullBackup|FullSave.sh
 button|Load FullBackup|FullLoad.sh
 
-button|back|mod_gui /opt/home/scripts/gui_focus
-button|cancel|killall mod_gui
+button|GO BACK|@/opt/usr/nx-ks/gui_focus.NX500
+button|CANCEL|/opt/usr/nx-ks/gui_exit.sh

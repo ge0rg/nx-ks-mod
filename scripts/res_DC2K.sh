@@ -1,4 +1,5 @@
 #!/bin/bash
-/opt/home/scripts/resup DC 2K
-rm -f /opt/home/scripts/auto/res_DCHD.sh
+/opt/usr/nx-ks/resup DC 2K
+rm -f /opt/usr/nx-ks/auto/res_DCUHD.sh
+rm -f /opt/usr/nx-ks/auto/res_DCHD.sh
 exit

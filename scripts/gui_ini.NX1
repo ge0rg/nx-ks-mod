@@ -1,8 +1,8 @@
-button|Time-Lapse|mod_gui /opt/home/scripts/gui_tl
-button|Custom Func.|mod_gui /opt/home/scripts/gui_func
+button|Time-Lapse|@/opt/usr/nx-ks/gui_tl.NX1
+button|Custom Func.|@/opt/usr/nx-ks/gui_func.NX1
 
-button|Focus + Profiles|mod_gui /opt/home/scripts/gui_focus
-button|Settings|mod_gui /opt/home/scripts/gui_settings
+button|Focus + Profiles|@/opt/usr/nx-ks/gui_focus.NX1
+button|Settings|@/opt/usr/nx-ks/gui_settings.NX1
 
 button|Hibernate|hibernate.sh
-button|Sleep|sleep.sh
+checkbox|Remote Ctr|nx-rc.sh

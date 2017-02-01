@@ -3,68 +3,172 @@ renice -n -50 -p $$
 if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
     if [[ "$1" = "VGA" ]]; then
         case "$2" in
-        DC)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:878ea0e3 0xe4420:01aaa0e3 #DC#
+        DC)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe441c:878ea0e3 0xe4420:01aaa0e3 #DC#
             ;;
-        UHD)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:878ea0e3 0xe4420:0faca0e3 #UHD#
+        UHD)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe441c:878ea0e3 0xe4420:0faca0e3 #UHD#
             ;;
-        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:5a8ea0e3 0xe4420:0aaca0e3 #2.K#
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe441c:5a8ea0e3 0xe4420:0aaca0e3 #2.K#
             ;;
-        1080P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:388400e3 0xe4420:1eada0e3 #1080P#
+        1080P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe441c:388400e3 0xe4420:1eada0e3 #1080P#
            ;;
-        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:2d8ea0e3 0xe4420:05aca0e3 #720P
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe441c:2d8ea0e3 0xe4420:05aca0e3 #720P
            ;;
-        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe441c:1e8ea0e3 0xe4420:0aada0e3 #VGA#
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe441c:1e8ea0e3 0xe4420:0aada0e3 #VGA#
            ;;
         *) ;;
         esac
     elif [[ "$1" = "720P" ]]; then
         case "$2" in
-        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:878ea0e3 0xe4414:01aaa0e3 #DC#
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4410:878ea0e3 0xe4414:01aaa0e3 #DC#
             ;;
-        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:878ea0e3 0xe4414:0faca0e3 #UHD#
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4410:878ea0e3 0xe4414:0faca0e3 #UHD#
             ;;
-        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:5a8ea0e3 0xe4414:0aaca0e3 #2.K#
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4410:5a8ea0e3 0xe4414:0aaca0e3 #2.K#
             ;;
-        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:388400e3 0xe4414:1eada0e3 #1080P#
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4410:388400e3 0xe4414:1eada0e3 #1080P#
            ;;
-        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:2d8ea0e3 0xe4414:05aca0e3 #720P
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4410:2d8ea0e3 0xe4414:05aca0e3 #720P
            ;;
-        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe4410:1e8ea0e3 0xe4414:0aada0e3 #VGA#
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4410:1e8ea0e3 0xe4414:0aada0e3 #VGA#
            ;;
         *) ;;
         esac
     elif [[ "$1" = "UHD" ]]; then
         case "$2" in
-        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xE4428:878ea0e3 0xE442C:01aaa0e3 #DC#
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xE4428:878ea0e3 0xE442C:01aaa0e3 #DC#
             ;;
-        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0xE4428:878ea0e3 0xE442C:0faca0e3 #UHD#
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xE4428:878ea0e3 0xE442C:0faca0e3 #UHD#
             ;;
-        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xE4428:5a8ea0e3 0xE442C:0aaca0e3 #2.K#
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xE4428:5a8ea0e3 0xE442C:0aaca0e3 #2.K#
             ;;
-        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xE4428:388400e3 0xE442C:1eada0e3 #1080P#
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xE4428:388400e3 0xE442C:1eada0e3 #1080P#
            ;;
-        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xE4428:2d8ea0e3 0xE442C:05aca0e3 #720P
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xE4428:2d8ea0e3 0xE442C:05aca0e3 #720P
            ;;
-        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xE4428:1e8ea0e3 0xE442C:0aada0e3 #VGA#
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xE4428:1e8ea0e3 0xE442C:0aada0e3 #VGA#
            ;;
         *) ;;
         esac        
     elif [[ "$1" = "DC" ]]; then
         case "$2" in
-        DC)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:878ea0e3 0xe43f0:01aaa0e3 #DC#
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe43ec:878ea0e3 0xe43f0:01aaa0e3 #DC#
             ;;
-        UHD)    /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:878ea0e3 0xe43f0:0faca0e3 #UHD#
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe43ec:878ea0e3 0xe43f0:0faca0e3 #UHD#
             ;;
-        2K)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:5a8ea0e3 0xe43f0:0aaca0e3 #2.K#
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe43ec:5a8ea0e3 0xe43f0:0aaca0e3 #2.K#
             ;;
-        1080P)   /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:388400e3 0xe43f0:1eada0e3 #1080P#
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe43ec:388400e3 0xe43f0:1eada0e3 #1080P#
            ;;
-        720P)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:2d8ea0e3 0xe43f0:05aca0e3 #720P
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe43ec:2d8ea0e3 0xe43f0:05aca0e3 #720P
            ;;
-        VGA)  /opt/home/scripts/poker $(pgrep di-camera-app) 0xe43ec:1e8ea0e3 0xe43f0:0aada0e3 #VGA#
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe43ec:1e8ea0e3 0xe43f0:0aada0e3 #VGA#
            ;;
         *) ;;
         esac
+    elif [[ "$1" = "1080P" ]]; then
+        case "$2" in
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4404:878ea0e3 0xe4408:01aaa0e3 #DC#
+            ;;
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4404:878ea0e3 0xe4408:0faca0e3 #UHD#
+            ;;
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4404:5a8ea0e3 0xe4408:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4404:388400e3 0xe4408:1eada0e3 #1080P#
+           ;;
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4404:2d8ea0e3 0xe4408:05aca0e3 #720P
+           ;;
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0xe4404:1e8ea0e3 0xe4408:0aada0e3 #VGA#
+           ;;
+        *) ;;
+        esac        
+    fi    
+#
+#
+#
+#
+#
+elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
+    if [[ "$1" = "VGA" ]]; then
+        case "$2" in
+        DC)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114240:876EA0E3 0x114244:01AAA0E3 #DC#
+            ;;
+        UHD)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114240:876EA0E3 0x114244:0FACA0E3 #UHD#
+            ;;
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114240:5a8ea0e3 0x114244:0aaca0e3 #2.K#
+            ;;
+        1080P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114240:386400E3 0x114244:1EADA0E3 #1080P#
+           ;;
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114240:2D6EA0E3 0x114244:05ACA0E3 #720P
+           ;;
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114240:1E6EA0E3 0x114244:0AADA0E3 #VGA#
+           ;;
+        *) ;;
+        esac
+    elif [[ "$1" = "720P" ]]; then
+        case "$2" in
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114234:876EA0E3 0x114238:01AAA0E3 #DC#
+            ;;
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114234:876EA0E3 0x114238:0FACA0E3 #UHD#
+            ;;
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114234:5a8ea0e3 0x114238:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114234:386400E3 0x114238:1EADA0E3 #1080P#
+           ;;
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114234:2D6EA0E3 0x114238:05ACA0E3 #720P
+           ;;
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114234:1E6EA0E3 0x114238:0AADA0E3 #VGA#
+           ;;
+        *) ;;
+        esac
+    elif [[ "$1" = "1080P" ]]; then
+        case "$2" in
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114228:876EA0E3 0x11422C:01AAA0E3 #DC#
+            ;;
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114228:876EA0E3 0x11422C:0FACA0E3 #UHD#
+            ;;
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114228:5a8ea0e3 0x11422C:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114228:386400E3 0x11422C:1EADA0E3 #1080P#
+           ;;
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114228:2D6EA0E3 0x11422C:05ACA0E3 #720P
+           ;;
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x114228:1E6EA0E3 0x11422C:0AADA0E3 #VGA#
+           ;;
+        *) ;;
+        esac     
+    elif [[ "$1" = "UHD" ]]; then
+        case "$2" in
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11424C:876EA0E3 0x114250:01AAA0E3 #DC#
+            ;;
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11424C:876EA0E3 0x114250:0FACA0E3 #UHD#
+            ;;
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11424C:5a8ea0e3 0x114250:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11424C:386400E3 0x114250:1EADA0E3 #1080P#
+           ;;
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11424C:2D6EA0E3 0x114250:05ACA0E3 #720P
+           ;;
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11424C:1E6EA0E3 0x114250:0AADA0E3 #VGA#
+           ;;
+        *) ;;
+        esac        
+    elif [[ "$1" = "DC" ]]; then
+        case "$2" in
+        DC)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11421C:876EA0E3 0x114220:01AAA0E3 #DC#
+            ;;
+        UHD)    /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11421C:876EA0E3 0x114220:0FACA0E3 #UHD#
+            ;;
+        2K)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11421C:5a8ea0e3 0x114220:0aaca0e3 #2.K#
+            ;;
+        1080P)   /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11421C:386400E3 0x114220:1EADA0E3 #1080P#
+           ;;
+        720P)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11421C:2D6EA0E3 0x114220:05ACA0E3 #720P
+           ;;
+        VGA)  /opt/usr/nx-ks/poker $(pgrep di-camera-app) 0x11421C:1E6EA0E3 0x114220:0AADA0E3 #VGA#
+           ;;
+        *) ;;
+        esac
+   
     fi    
 fi
 exit

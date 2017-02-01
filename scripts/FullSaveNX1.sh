@@ -1,5 +1,5 @@
 #!/bin/bash
- /opt/home/scripts/popup_timeout  " [  Saving...  ] " 3 &
+ /opt/usr/nx-ks/popup_timeout  " [  Saving...  ] " 2 &
 [ -d "/sdcard/presets" ] || mkdir /sdcard/presets
 prefman save_file 0 /sdcard/presets/FullSave0
 prefman save_file 11 /sdcard/presets/FullSave11
@@ -15,5 +15,5 @@ prefman save_file 10 /sdcard/presets/FullSave10
 sync
 sync
 sync
-/opt/home/scripts/popup_timeout  " [ Complete ] " 2
+/opt/usr/nx-ks/popup_timeout  " [ Saving Complete ] " 3
 exit

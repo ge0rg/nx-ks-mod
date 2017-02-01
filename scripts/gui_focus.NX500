@@ -1,8 +1,11 @@
-button|Focus Stacking|fstack.sh
-button|Focus Buttons|focus_buttons
+button|Focus Stacking|/opt/usr/nx-ks/fstack.sh
+button|Focus Buttons|/opt/usr/nx-ks/focus_buttons
 
-button|Profiles|mod_gui /opt/home/scripts/gui_profiles
-button|Focus-Pull Speed|fpspeed.sh
+button|Profiles|@/opt/usr/nx-ks/gui_profiles.NX500
+button|Focus-Pull Speed|/opt/usr/nx-ks/fpspeed.sh
 
-button|back|/opt/home/scripts/loadgui.sh
-button|cancel|killall mod_gui
+checkbox|My Checkbox|cCheckbox.sh
+button|My Button|cButton.sh
+
+button|GO BACK|@/opt/usr/nx-ks/gui_ini.NX500
+button|CANCEL|/opt/usr/nx-ks/gui_exit.sh

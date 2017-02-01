@@ -1,9 +1,9 @@
 #!/bin/bash
 hevc=($(st pmu show | grep hevc)); 
 if [[ "${hevc[1]}" == "ON" ]]; then 
-	/opt/home/scripts/popup_timeout  "Video Mode !?" 3
-	/opt/home/scripts/popup_timeout  "Are you asking for trouble?" 2
-	/opt/home/scripts/popup_timeout  "Trouble comes in: 3, 2,... 1" 2
+	/opt/usr/nx-ks/popup_timeout  "Video Mode !?" 3
+	/opt/usr/nx-ks/popup_timeout  "Are you asking for trouble?" 2
+	/opt/usr/nx-ks/popup_timeout  "Trouble comes in: 3, 2,... 1" 2
 	killall mod_gui
 	exit
 fi
@@ -25,8 +25,8 @@ for i in "${tii[@]}"; do if [[ $i == "p_7="* ]]; then p_7=${i:4}; fi; done
 [[ $p_6 = "" ]] &&  systemctl set-environment p_6=10 &&  p_6=10 
 [[ $p_7 = "" ]] &&  systemctl set-environment p_7=0 && p_7=0
 ##############################################
-sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/" -e "s/\${p_7}/"$p_7"/" /opt/home/scripts/gui_ramp_ov.tp > /tmp/gui_ramp.NX500
-sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/" -e "s/\${p_7}/"$p_7"/" /opt/home/scripts/gui_ramp_ov.tp > /tmp/gui_ramp.NX1
+sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/" -e "s/\${p_7}/"$p_7"/" /opt/usr/nx-ks/gui_ramp_ov.tp > /tmp/gui_ramp.NX500
+sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/" -e "s/\${p_7}/"$p_7"/" /opt/usr/nx-ks/gui_ramp_ov.tp > /tmp/gui_ramp.NX1
 #
 sync;sync;sync;
-/opt/home/scripts/loader.sh "/opt/home/scripts/mod_gui /tmp/gui_ramp"
+/opt/usr/nx-ks/loader.sh "/opt/usr/nx-ks/mod_gui /tmp/gui_ramp"

@@ -1,5 +1,10 @@
 #!/bin/bash
-renice -n -10 -p $$
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/home/scripts/popup_timeout  " [ Mod v2.07${s} by Otto / KS ] " 3 &
-systemctl set-environment fps=${fps}
-sysctl fs.file-max=30000
+renice -n -15 -p $$ &> /dev/null
+#	dp_tv=($(st pmu show | grep dp_tv)) 
+#	if [[ "${dp_tv[1]}" == "OFF" ]]; then 
+[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && $( /opt/usr/nx-ks/onscreen_ks &> /dev/null  & ) &
+#	fi
+#############################################
+/opt/usr/nx-ks/poker $(pgrep di-camera-app) ${brr}
+#############################################
+systemctl set-environment ${envbr} &

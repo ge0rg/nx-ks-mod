@@ -1,4 +1,5 @@
 #!/bin/bash
-/opt/home/scripts/resup DC 1080P
-rm -f /opt/home/scripts/auto/res_DC2K.sh
+/opt/usr/nx-ks/resup DC 1080P
+rm -f /opt/usr/nx-ks/auto/res_DC2K.sh
+rm -f /opt/usr/nx-ks/auto/res_DCUHD.sh
 exit

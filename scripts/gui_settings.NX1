@@ -4,8 +4,11 @@ checkbox|No Rec Limit|r-limit.sh
 checkbox|Refocus on Boot|refocus.sh
 checkbox|Enable Bluetooth|bt.sh
 
-checkbox|Swap 128MB|swap.sh
-button|Uninstall Mod v2.07|uninstall.sh
+checkbox|Overlay|ov.sh
+checkbox|OFF menu-button|z_button.sh
 
-button|back|/opt/home/scripts/loadgui.sh
-button|cancel|killall mod_gui
+button| Mod v2.88 |ver.sh
+button|Uninstall Mod|uninstall.sh
+
+button|GO BACK|@/opt/usr/nx-ks/gui_ini.NX1
+button|CANCEL|/opt/usr/nx-ks/gui_exit.sh

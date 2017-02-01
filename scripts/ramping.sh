@@ -22,8 +22,8 @@ p_5=$(($p_5*60))
 p_6=$(($p_6*60))
 sleepytime=$(($p_7*60))
 #############################################
-sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/"  -e "s/\${p_7}/"$p_7"/"  /opt/home/scripts/ramplapse.tp >  /opt/home/scripts/auto/tl.sh
-chmod +x /opt/home/scripts/auto/tl.sh
+sed -e "s/\${p_1}/"$p_1"/" -e "s/\${p_2}/"$p_2"/" -e "s/\${p_3}/"$p_3"/" -e "s/\${p_4}/"$p_4"/" -e "s/\${p_5}/"$p_5"/" -e "s/\${p_6}/"$p_6"/"  -e "s/\${p_7}/"$p_7"/"  /opt/usr/nx-ks/ramplapse.tp >  /opt/usr/nx-ks/auto/tl.sh
+chmod +x /opt/usr/nx-ks/auto/tl.sh
 #
 /usr/bin/st app nx capture af-mode manual
 /usr/bin/st cap capdtm setusr AFMODE 0x70003
@@ -34,5 +34,5 @@ sync; sync; sync;
 echo 3 > /proc/sys/vm/drop_caches
 sleep 0.25
 #
-[[ $sleepytime > "0" ]] && $( /opt/home/scripts/popup_timeout  "Wakeup in $(($sleepytime/60))min. Zzzz." 3 && rtcwake -m mem -s $sleepytime && reboot ) || /opt/home/scripts/auto/tl.sh
+[[ $sleepytime > "0" ]] && $( /opt/usr/nx-ks/popup_timeout  "Wakeup in $(($sleepytime/60))min. Zzzz." 3 && rtcwake -m mem -s $sleepytime && reboot ) || /opt/usr/nx-ks/auto/tl.sh
 

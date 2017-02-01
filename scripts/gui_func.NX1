@@ -1,11 +1,14 @@
-button|Batch Recording|brec.sh
-button|LCD-Off Rec.|nrec.sh
+checkbox|Remote Save|rem.sh
+button|Video Bitrates|@/tmp/gui_br.NX1
 
-button|Reboot|reboot.sh
 button|ZoomZoom|zoomzoom.sh
+button|Mod Resolutions|@/opt/usr/nx-ks/gui_res.NX1
 
-button| Mod v2.07 |ver.sh
+button|Batch Recording|brec.sh
 button|HDR|1HDR.sh
 
-button|back|/opt/home/scripts/loadgui.sh
-button|cancel|killall mod_gui
+button| Mod v2.88 |ver.sh
+checkbox|Camcorder Mode|camcorder_mode.sh
+
+button|GO BACK|@/opt/usr/nx-ks/gui_ini.NX1
+button|CANCEL|/opt/usr/nx-ks/gui_exit.sh

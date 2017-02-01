@@ -22,5 +22,5 @@
 	prefman load_file 10 /sdcard/presets/FullSave10; 
 	prefman save; 
 	sync;sync;sync;
-	/opt/home/scripts/popup_timeout  " [  Loading Complete  ] " 2; st key click pwoff ) || /opt/home/scripts/popup_timeout  " [  Files Missing  ] " 3
+	/opt/usr/nx-ks/popup_timeout  " [  Loading Complete  ] " 2; st key click pwoff ) || /opt/usr/nx-ks/popup_timeout  " [  Files Missing  ] " 3
 exit
