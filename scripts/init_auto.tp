@@ -2,7 +2,7 @@
 renice -n -15 -p $$ &> /dev/null
 #	dp_tv=($(st pmu show | grep dp_tv)) 
 #	if [[ "${dp_tv[1]}" == "OFF" ]]; then 
-[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && $( /opt/usr/nx-ks/onscreen_ks &> /dev/null  & ) &
+#[[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && $( /opt/usr/nx-ks/onscreen_ks &> /dev/null  & ) &
 #	fi
 #############################################
 /opt/usr/nx-ks/poker $(pgrep di-camera-app) ${brr}
