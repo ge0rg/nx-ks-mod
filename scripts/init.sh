@@ -18,7 +18,7 @@ export GTK_IM_MODULE_FILE=/opt/etc/gtk-2.0/gtk.immodules
 export LD_LIBRARY_PATH=:/usr/lib:/usr/lib/driver
 export ECORE_IMF_MODULE=isf
 export ECORE_INPUT_TIMEOUT_FIX=0
-export PATH="/usr/share/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/usr/devel/usr/sbin:/opt/usr/devel/usr/bin:/opt/usr/devel/sbin:/opt/usr/devel/bin"
+export PATH="/usr/share/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/usr/devel/usr/sbin:/opt/usr/devel/usr/bin:/opt/usr/devel/sbin:/opt/usr/devel/bin:/opt/usr/nx-ks"
 export EINA_LOG_DLOG_ENABLE=1
 export XMODIFIERS=@im=SCIM
 export EINA_LOG_LEVEL=1
