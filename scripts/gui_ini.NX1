@@ -6,3 +6,4 @@ button|Settings|@/opt/usr/nx-ks/gui_settings.NX1
 
 button|Hibernate|hibernate.sh
 checkbox|Remote Ctr|nx-rc.sh
+button|CANCEL|

@@ -2,7 +2,7 @@ button|Wake Lapse|wakelapse.sh
 button|Ramping|@/tmp/gui_ramp.NX1
 
 button|Mod Lapse|mod_lapse
-button|Coming soon|
+button|Bulb|bulb_menu.sh
 
 button|GO BACK|@/opt/usr/nx-ks/gui_ini.NX1
 button|CANCEL|/opt/usr/nx-ks/gui_exit.sh
