@@ -18,6 +18,6 @@ showmetheway(){
 	done
 }
 showmetheway&
-sleep 10
-nice --adjustment=19 $APP_PATH/nx-remote-controller-daemon &> /mnt/mmc/nx-rc.log &
+sleep 1
+nice --adjustment=19 $APP_PATH/nx-remote-controller-daemon &> /dev/null &
 #tothenextwhiskeybar
