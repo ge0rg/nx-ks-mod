@@ -11,6 +11,9 @@ UDHCPD_CONF="/opt/usr/nx-ks/ap/udhcp_uap.conf"
 UDHCPD_PID="/var/run/udhcpd.pid"
 LEASES_FILE="/opt/usr/nx-ks/ap/udhcpd.leases"
 
+# Execute wlan.sh script
+/usr/bin/wlan.sh force_stop >> $LOGFILE 2>&1
+
 # Set regulatory domain to Germany
 iw reg set DE >> $LOGFILE 2>&1
 
@@ -52,3 +55,9 @@ ifconfig "$UAP_IF" "$IP_ADDR" netmask "$SUBNET" up >> $LOGFILE 2>&1
 # Prepare udhcpd
 rm -f "$LEASES_FILE" >> $LOGFILE 2>&1
 udhcpd "$UDHCPD_CONF" >> $LOGFILE 2>&1 &
+
+{
+	# output AP details, cheat by shell-parding the conf file
+	source $HOSTAPD_CONF
+	popup_timeout "WiFi AP: $ssid<br/>Password: $wpa_passphrase<br/><br/>IP: $IP_ADDR" 5
+}
