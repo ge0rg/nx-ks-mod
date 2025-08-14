@@ -101,7 +101,7 @@ _c1f27a20=310
 _c1f21230=320
 _c1f2d770=400
 ########################################################################
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
+if [ "$MODEL" = "NX500" ]; then
 #NX500
 mq=$(prefman get 0 0x0000a368  b);  mq=( $mq )
 mq=${mq[5]}
@@ -129,7 +129,7 @@ case "$mz" in
 esac
 off1="nx500_$cq[1]"
 #
-elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
+elif [ "$MODEL" = "NX1" ]; then
 #NX1
 mq=$(prefman get 0 0x00000338  b);  mq=( $mq )
 mq=${mq[5]}

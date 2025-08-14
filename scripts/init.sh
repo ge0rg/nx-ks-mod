@@ -36,6 +36,7 @@ export TERM="vt102"
 export USER="root"
 export LOGNAME="root"
 export MULTISENSE_SND_PLAYER="tizen_snd_player"
+export MODEL=$(grep '^NX[0-9]\+$' /etc/version.info)
 nice -n +15 /opt/usr/nx-ks/keyscan /dev/event0 /dev/event1 /opt/usr/nx-ks/ &
 sync
 sync

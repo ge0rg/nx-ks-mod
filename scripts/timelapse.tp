@@ -3,7 +3,7 @@ rm -f /sdcard/presets/lapsing
 rm -f /opt/usr/nx-ks/auto/tl.sh
 /usr/bin/st app nx capture af-mode manual
 /usr/bin/st cap capdtm setusr AFMODE 0x70003
-[ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]  && nx500="good"
+[ "$MODEL" = "NX500" ]  && nx500="good"
 sync;sync;sync;
 yell() { [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/usr/nx-ks/popup_timeout  " Time-lapse Done " 2; }
 die() {  rm -f /sdcard/presets/lapsing; tscon; upd; yell; kill $$; exit ; }
@@ -22,7 +22,7 @@ cancel() {
 lapsing() {
 	tscoff
 	upd
-	[ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]  && nx500="good"
+	[ "$MODEL" = "NX500" ]  && nx500="good"
 	end=$((SECONDS+$1))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
@@ -44,22 +44,22 @@ lapsedone() {
 	zzz
 }
 tscoff(){
-	if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
+	if [ "$MODEL" = "NX500" ]; then
 	to=$(prefman get 0 0x0000a690  b);  to=( $to )
 	to=${to[5]}
 	prefman set 0 0x0000a690 b 0
-elif [  $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
+elif [  "$MODEL" = "NX1" ]; then
 	to=$(prefman get 0 0x00000658  b);  to=( $to )
 	to=${to[5]}
 	prefman set 0 0x00000658 b 0
 fi
 }
 tscon(){
-	if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
+	if [ "$MODEL" = "NX500" ]; then
 	to=$(prefman get 0 0x0000a690  b);  to=( $to )
 	to=${to[5]}
 	prefman set 0 0x0000a690 b 1
-elif [  $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
+elif [  "$MODEL" = "NX1" ]; then
 	to=$(prefman get 0 0x00000658  b);  to=( $to )
 	to=${to[5]}
 	prefman set 0 0x00000658 b 1

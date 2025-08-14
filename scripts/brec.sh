@@ -19,9 +19,9 @@ blackouton(){
 	st app led off
 }
 touchoff(){
-	if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
+	if [ "$MODEL" = "NX500" ]; then
 		prefman set 0 0x0000a690 b 0
-	elif [  $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
+	elif [  "$MODEL" = "NX1" ]; then
 		prefman set 0 0x00000658 b 0
 	fi
 	dm=$(st cap capdtm getusr DIALMODE);  dm=( $dm )
@@ -68,7 +68,7 @@ if [[  $? -eq 0 ]]; then
 fi
 systemctl set-environment rec=$rec
 recording_length=$(($recording_length*60-1))
-[ $(/bin/grep   ^NX1$  /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ] && camisnx1="nx1"
+[ "$MODEL" = "NX1" ] && camisnx1="nx1"
 [ $touch ] && touchoff
 [ $blackout ] && blackoutprep&
 until [ $rec -lt 1 ]

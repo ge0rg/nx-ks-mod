@@ -10,9 +10,9 @@ while [ $SECONDS -lt $end ]; do
 	sleep 0.25
 done
 #
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ]; then
+if [ "$MODEL" = "NX500" ]; then
 	sp=$(prefman get 0 0xa340  l);
-elif [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41" ]; then
+elif [ "$MODEL" = "NX1" ]; then
 	sp=$(prefman get 0 0x310  l);
 fi
 #

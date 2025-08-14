@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ] ||
- [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ]; then
+if [ "$MODEL" = "NX500" ] ||
+ [ "$MODEL" = "NX1"  ]; then
 #
 	t1=($(cksum /sdcard/presets/preset0_down1)) ; t2=($(cksum /sdcard/presets/preset0_down2)) ; 
 	[[ $t1 = $t2  ]] && 
