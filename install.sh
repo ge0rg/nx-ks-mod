@@ -3,8 +3,8 @@
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] || { $( st app disp lcd ) &&  sleep 1 ; }
 [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] || exit   
 #
-if [ $(/bin/grep ^NX500$ /etc/version.info) = "NX500" -a $(/bin/grep ^1.12$ /etc/version.info) = "1.12" ] ||
- [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ]; then
+if [ "$(/bin/grep ^NX500$ /etc/version.info)" = "NX500" -a "$(/bin/grep ^1.12$ /etc/version.info)" = "1.12" ] ||
+ [ "$(/bin/grep   ^NX1$   /etc/version.info)" = "NX1"   -a "$(/bin/grep ^1.41$ /etc/version.info)" = "1.41"  ]; then
     if [ ! -x /usr/sbin/bluetoothd.orig ]; then
         /mnt/mmc/scripts/popup_timeout  " [  Installing...  ] " 4 &
         mount -o remount,rw /
@@ -43,8 +43,8 @@ EOF
           sync;sync;sync
           reboot
     fi
-      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ] && mv /opt/usr/nx-ks/EV_EV.sh /opt/usr/nx-ks/EV_OK.sh
-      [ $(/bin/grep   ^NX1$   /etc/version.info) = "NX1" -a $(/bin/grep ^1.41$ /etc/version.info) = "1.41"  ] && cp /opt/usr/nx-ks/keyscan1 /opt/usr/nx-ks/keyscan
+      [ "$(/bin/grep   ^NX1$   /etc/version.info)" = "NX1" -a "$(/bin/grep ^1.41$ /etc/version.info)" = "1.41"  ] && mv /opt/usr/nx-ks/EV_EV.sh /opt/usr/nx-ks/EV_OK.sh
+      [ "$(/bin/grep   ^NX1$   /etc/version.info)" = "NX1" -a "$(/bin/grep ^1.41$ /etc/version.info)" = "1.41"  ] && cp /opt/usr/nx-ks/keyscan1 /opt/usr/nx-ks/keyscan
       killall dfmsd
       rm /mnt/mmc/info.tg
       rm /mnt/mmc/nx_cs.adj
