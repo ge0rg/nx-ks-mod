@@ -42,16 +42,14 @@ lapsing() {
 	tscoff
 	upd
 	end=$((SECONDS+$1))  
-	[ "$MODEL" = "NX1"  ] && nx1="good"
-	[ "$MODEL" = "NX500" ]  && nx500="good"
 	ramp_start_clock=$(($SECONDS+$ramp_start))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi
 		[ $SECONDS -gt $ramp_start_clock -a $SECONDS -lt $(($ramp_start_clock+$ramp_length))  ] && ez2
 		exp_set=$exp
 		calctmp
-		[[ $nx1 = "good"  ]] && prefman set 0 0x0310 l $exp_set
-		[[ $nx500 = "good" ]] &&  prefman set 0 0xa340 l $exp_set
+		[[ "$MODEL" = "NX1" ]] && prefman set 0 0x0310 l $exp_set
+		[[ "$MODEL" = "NX500" ]] &&  prefman set 0 0xa340 l $exp_set
 		/usr/bin/st app mode m
 		sleep $(($2/2))
 		#st key push s1 && st key click s2 && st key release s1

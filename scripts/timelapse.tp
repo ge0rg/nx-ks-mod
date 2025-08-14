@@ -3,7 +3,6 @@ rm -f /sdcard/presets/lapsing
 rm -f /opt/usr/nx-ks/auto/tl.sh
 /usr/bin/st app nx capture af-mode manual
 /usr/bin/st cap capdtm setusr AFMODE 0x70003
-[ "$MODEL" = "NX500" ]  && nx500="good"
 sync;sync;sync;
 yell() { [[ $(echo $(st cap capdtm getusr MONITOROUT) | grep LCD) > ""  ]] && /opt/usr/nx-ks/popup_timeout  " Time-lapse Done " 2; }
 die() {  rm -f /sdcard/presets/lapsing; tscon; upd; yell; kill $$; exit ; }
@@ -22,7 +21,6 @@ cancel() {
 lapsing() {
 	tscoff
 	upd
-	[ "$MODEL" = "NX500" ]  && nx500="good"
 	end=$((SECONDS+$1))
 	while [ $SECONDS -lt $end ]; do
 		if [[ "$(cat /sdcard/presets/lapsing)" > ""  ]]; then die; fi

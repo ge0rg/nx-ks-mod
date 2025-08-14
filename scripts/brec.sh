@@ -68,7 +68,6 @@ if [[  $? -eq 0 ]]; then
 fi
 systemctl set-environment rec=$rec
 recording_length=$(($recording_length*60-1))
-[ "$MODEL" = "NX1" ] && camisnx1="nx1"
 [ $touch ] && touchoff
 [ $blackout ] && blackoutprep&
 until [ $rec -lt 1 ]
@@ -79,5 +78,5 @@ do
       tii=($(systemctl show-environment))
       for i in "${tii[@]}"; do if [[ $i == "rec="* ]]; then rec=${i:4}; fi; done
       /opt/usr/nx-ks/stapp "app nx record stop"
-      [ $camisnx1 ] && sleep 2
+      [ "$MODEL" = "NX1" ] && sleep 2
 done
