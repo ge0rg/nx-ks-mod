@@ -4,6 +4,8 @@ In 2016 and 2017, the user **KinoSeed** created a very useful firmware mod for
 Samsung NX1 and NX500 cameras. It was uploaded to different sites over the
 years, and none of the original download locations still exist.
 
+![NX-KS settings screenshot](nx-ks-screenshot.png)
+
 This repository has two goals:
 
 1. Recreate the history of the NX-KS mod changes based on
