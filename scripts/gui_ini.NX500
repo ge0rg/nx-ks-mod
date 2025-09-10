@@ -4,7 +4,7 @@ button|Custom Func.|@/opt/usr/nx-ks/gui_func.NX500
 button|Focus + Profiles|@/opt/usr/nx-ks/gui_focus.NX500
 button|Settings|@/opt/usr/nx-ks/gui_settings.NX500
 
-button|Hibernate|hibernate.sh
+checkbox|WiFi Access Point|apstart.sh
 checkbox|Remote Ctr|nx-rc.sh
 button|CANCEL|
 button|IP|
